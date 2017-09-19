@@ -1,0 +1,98 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+a{
+	text-decoration: none;
+	color: #111;
+}
+ul,li,ol{
+	list-style: none;
+}
+.top .vux-header{
+	background: #ed544a;
+}
+.top .vux-header-right a.router-link-active{
+	color: #fff;
+}
+.canWithdraw{
+	background: #ed544a;
+	font-size: 16px;
+	color: #fff;
+	height: 4rem;
+	margin-top: -1px;
+}
+.canWithdraw>img{
+	float: left;
+	width: 1.8rem;
+	margin: 1rem 0.8rem 0 0.4rem;
+}
+.canWithdraw>ul{
+	position: relative;
+	top: 1.2rem;
+	line-height: 0.6rem;
+}
+.canWithdraw>ul li img{
+	width: 0.4rem;
+	float: right;
+	margin-top: 0.5rem;
+	margin-right: 0.4rem;
+}
+.canWithdraw>ul li:last-of-type{
+	margin-top: 0.2rem;
+}
+.canWithdraw>ul li span{
+	font-size: 0.48rem;
+}
+
+.middle{
+	clear: both;
+	height: 0.4rem;
+	background: #fff;
+}
+
+.bottom{
+	font-size: 0.32rem;
+	background: #f7f7f7;
+}
+.bottom ul li{
+	height: 1rem;
+	line-height: 1rem;
+	padding-left: 0.84rem;
+}
+.bottom ul li img{
+	float: right;
+	width: 0.4rem;
+	margin-top: 0.3rem;
+	margin-right: 0.4rem;
+}
+.bottom ul li:first-of-type{
+	background: url(../../src/assets/image/ic_personal_icon_purse@2x.png) 0.2rem 0.24rem no-repeat;
+	
+}
+.bottom ul li:first-of-type p{
+	border-bottom: solid 1px #ddd;
+}
+.bottom ul li:first-of-type span{
+	float: right;
+}
+.bottom ul li:last-of-type{
+	background: url(../../src/assets/image/ic_personal_icon_shouzhi_nor@2x.png) 0.2rem 0.28rem no-repeat;
+	background-size: 0.48rem;
+}
+.bottom>p{
+	height: 1rem;
+	line-height: 1rem;
+	padding-left: 0.94rem;
+	background: url(../../src/assets/image/ic_personal_icon_bank_nor@2x.png) 0.12rem 0.2rem no-repeat;
+	background-size: 0.56rem;
+}
+.bottom>p>a>span{
+	float: right;
+}
+.bottom>p>a>img{
+	float: right;
+	width: 0.4rem;
+	margin-right: 0.4rem;
+	margin-top: 0.3rem;
+}

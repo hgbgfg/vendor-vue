@@ -1,8 +1,9 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import vipiao from '@/components/vipiao'
-import personalInfo from '@/components/personalInfo'
-import programs from '@/components/programs'
+import myWallet from '@/components/myWallet'
+import notice from '@/components/notice'
+import withDraw from '@/components/withDraw'
 
 Vue.use(Router)
 
@@ -14,14 +15,19 @@ export default new Router({
         component: vipiao
     },
     {
-    	path: '/personalInfo',
-    	name: 'personalInfo',
-    	component: personalInfo
+    	path: '/myWallet',
+    	name: 'myWallet',
+    	component: myWallet
     },
     {
-    	path: '/programs',
-    	name: 'programs',
-    	component: programs
+    	path: '/notice',
+    	name: 'notice',
+    	component: notice
+    },
+    {
+        path: '/withDraw',
+        name: 'withDraw',
+        component: withDraw
     }
   ]
 })

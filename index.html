@@ -9,99 +9,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="apple-mobile-web-app-status-bar-style" content="black"> 
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="format-detection" content="telephone=no">  
-    <link rel="stylesheet" href="static/lib/layui/css/layui.css"  media="all">
-    <link rel="stylesheet" href="static/css/vipiao.css"  media="all">
+    <meta name="format-detection" content="telephone=no">
     <!-- 让IE8/9支持媒体查询 -->
     <!--[if lt IE 9]>
       <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
       <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+
+    <script type="text/javascript">
+      	(function (doc, win) {
+          var docEl = doc.documentElement,
+            resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+            recalc = function () {
+                var clientWidth = docEl.clientWidth;
+                if (!clientWidth) return;
+                docEl.style.fontSize = 100 * (clientWidth / 750) + 'px';
+            };          
+            recalc();
+            if (!doc.addEventListener) return;
+            win.addEventListener(resizeEvt, recalc, false);
+            doc.addEventListener('DOMContentLoaded', recalc, false);
+        })(document, window);
+    </script>
   </head>
   <body>
-    <div></div>
-    <div class="layui-layout layui-layout-admin layui-layout-vipiao vipiao">
-	    <div class="layui-header">
-		    <div class="layui-logo"><img src="static/images/logo.png" alt=""></div>
-		    <!-- 头部区域（可配合layui已有的水平导航） -->
-		    <ul class="layui-nav layui-layout-left">
-		      <li class="layui-nav-item"><a href="">首页</a></li>
-		      <li class="layui-nav-item"><a href="">用户管理</a></li>
-		      <li class="layui-nav-item">
-		        <a href="javascript:;">系统管理</a>
-		        <dl class="layui-nav-child">
-		          <dd><a href="#personalInfo">个人信息</a></dd>
-		          <dd><a href="">修改密码</a></dd>
-		        </dl>
-		      </li>
-		      <li class="layui-nav-item"><a href="">使用手册</a></li>
-		    </ul>
-		    <ul class="layui-nav layui-layout-right">
-		      <li class="layui-nav-item">
-		        <a href="javascript:;">
-		          <img src="http://t.cn/RCzsdCq" class="layui-nav-img">
-		          唯票
-		        </a>
-		        <dl class="layui-nav-child">
-		          <dd><a href="#personalInfo">基本资料</a></dd>
-		          <dd><a href="">修改密码</a></dd>
-		        </dl>
-		      </li>
-		      <li class="layui-nav-item"><a href="">注销</a></li>
-		    </ul>
-	    </div>
-  
-	    <div class="layui-side layui-bg-black">
-		    <div class="layui-side-scroll">
-		      <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
-		      <ul class="layui-nav layui-nav-tree"  lay-filter="test">
-		        <li class="layui-nav-item layui-nav-itemed">
-		          <a class="" href="javascript:;"><img src="static/images/programIcon.png" style="width: 14px;height: 16px;margin-right: 6px" />节目管理</a>
-		          <dl class="layui-nav-child">
-		            <dd><a href="#programs">发布票源</a></dd>
-		            <dd><a href="javascript:;">已发布票源</a></dd>
-		          </dl>
-		        </li>
-		        <li class="layui-nav-item">
-		          <a href="javascript:;"><img src="static/images/orderIcon.png" style="width: 14px;height: 16px;margin-right: 6px" />订单管理</a>
-		          <dl class="layui-nav-child">
-		            <dd><a href="javascript:;">待确认</a></dd>
-		            <dd><a href="javascript:;">待发货</a></dd>
-		            <dd><a href="">订单列表</a></dd>
-		          </dl>
-		        </li>
-		        <li class="layui-nav-item">
-		          <a href="javascript:;"><img src="static/images/activityIcon.png" style="width: 14px;height: 16px;margin-right: 6px" />活动管理</a>
-		          <dl class="layui-nav-child">
-		            <dd><a href="javascript:;">微博转发抽奖</a></dd>
-		            <dd><a href="javascript:;">预定列列表</a></dd>
-		            <dd><a href="">已获得预定</a></dd>
-		          </dl>
-		        </li>
-		        <li class="layui-nav-item">
-		          <a href="javascript:;"><img src="static/images/money bag.png" style="width: 16px;height: 18px;margin-right: 6px" />钱包管理</a>
-		          <dl class="layui-nav-child">
-		            <dd><a href="javascript:;">提现申请</a></dd>
-		          </dl>
-		        </li>
-		        <!-- <li class="layui-nav-item"><a href=""><i class="layui-icon">&#xe620;</i>发布商品</a></li> -->
-		      </ul>
-		    </div>
-	    </div>
-	  
-	    <div class="layui-body layui-tab-card">
-		    <!-- 内容主体区域 -->
-		    <div id="app" style="padding: 20px;">
-		        
-		    </div>
-	    </div>
-	  
-	    <div class="layui-footer">
-		    <!-- 底部固定区域 -->
-		    © 北京盈拓文化传媒有限公司 版权所有
-	    </div>
-	</div>
-    <!-- built files will be auto injected -->
-    <script type="text/javascript" src="static/lib/layui/layui.all.js"></script>
+    
+      <div id="app" style="padding: 20px;box-sizing: border-box;">
+        
+      </div>
+      <style type="text/css">
+      	  html, body{width: 100%; overflow-x: hidden;margin: 0;}
+      </style>
   </body>
 </html>

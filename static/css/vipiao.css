@@ -4,6 +4,7 @@
 ::-webkit-scrollbar-thumb{border-radius:0;background-color:rgba(0,0,0,.3)}
 ::-webkit-scrollbar-thumb:vertical:hover{background-color:rgba(0,0,0,.35)}
 ::-webkit-scrollbar-thumb:vertical:active{background-color:rgba(0,0,0,.38)}
+html, body{width: 100%; overflow-x: hidden;margin: 0}
 .layui-layout-vipiao .layui-side .layui-nav-item .layui-icon{
 	margin-right: 6px;
 }
