@@ -1,0 +1,56 @@
+*{
+	margin: 0;
+	padding: 0;
+	color: #111;
+}
+ul, ol, li{
+	list-style: none;
+}
+a{
+	text-decoration: none;
+	color: #111;
+}
+.topTitle{
+	font-size: 0.34rem;
+	line-height: 0.92rem;
+	border-bottom: solid 0.01rem #ddd;
+	text-align: center;
+}
+.topTitle img{
+	width: 0.32rem;
+	position: absolute;
+	top: 0.3rem;
+	left: 0.3rem;
+}
+
+.tabMenu{
+	display: flex;
+	justify-content: space-around;
+	border-bottom: solid 0.01rem #ddd;
+	height: 0.8rem;
+	line-height: 0.4rem;
+}
+.tabMenu li{
+	padding: 0 0.3rem;
+}
+.tabMenu a{
+	font-size: 0.28rem;
+	color: #7d7d7d;
+}
+.tabMenu a:first-of-type img{
+	width: 0.22rem;
+}
+.tabMenu a:nth-of-type(2) img{
+	width: 0.26rem;
+}
+.tabMenu a:flast-of-type img{
+	width: 0.24rem;
+}
+.selected{
+	border-bottom: solid 3px #fce86c;
+}
+
+.content{
+	padding: 0.3rem;
+	font-size: 0.3rem;
+}

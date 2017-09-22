@@ -48,12 +48,11 @@ ul,li,ol{
 .middle{
 	clear: both;
 	height: 0.4rem;
-	background: #fff;
+	background: #f7f7f7;
 }
 
 .bottom{
 	font-size: 0.32rem;
-	background: #f7f7f7;
 }
 .bottom ul li{
 	height: 1rem;
@@ -67,8 +66,8 @@ ul,li,ol{
 	margin-right: 0.4rem;
 }
 .bottom ul li:first-of-type{
-	background: url(../../src/assets/image/ic_personal_icon_purse@2x.png) 0.2rem 0.24rem no-repeat;
-	
+	background: url(../../src/assets/image/ic_personal_icon_tixian_nor@2x.png) 0.2rem 0.24rem no-repeat;
+	background-size: 0.48rem;
 }
 .bottom ul li:first-of-type p{
 	border-bottom: solid 1px #ddd;

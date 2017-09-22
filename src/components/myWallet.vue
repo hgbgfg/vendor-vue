@@ -22,7 +22,7 @@
 					<router-link to="/"><p>可用余额<img src="../assets/image/ic_nav_nextarrow@2x.png"><span>￥99999.00 </span></p></router-link>
 				</li>
 				<li>
-					<router-link to="/">收支明细<img src="../assets/image/ic_nav_nextarrow@2x.png"></router-link>
+					<router-link to="/changeDetail">收支明细<img src="../assets/image/ic_nav_nextarrow@2x.png"></router-link>
 				</li>
 			</ul>
 			<div class="middle"></div>
@@ -58,6 +58,11 @@
 			/*Actionsheet,
 			ButtonTab,
 			ButtonTabItem*/
+		},
+		mounted: function(){
+			localStorage.setItem("selectedIncome", true);
+			localStorage.setItem("selectedDraw", false);
+			localStorage.setItem("selectedDeposit", false);
 		},
 		methods: {
 

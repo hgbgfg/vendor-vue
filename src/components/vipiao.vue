@@ -67,7 +67,7 @@
         </ul>
       </div>
       <p class="grabVotes">
-        <span>抢单</span>
+        <router-link to="/grabVotes"><span>抢单</span></router-link>
         <img src="../assets/image/bubble_hom_btn_new@2x.png">
       </p>
     </div>

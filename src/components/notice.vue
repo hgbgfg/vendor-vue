@@ -1,6 +1,7 @@
 <template>
 	<div class="walletNotice">
 		<p><x-header :left-options="{backText: ''}">钱包说明</x-header></p>
+		<div class="blank20"></div>
 		<ul>
 			<li>
 				1.什么情况下钱款会转至钱包中？
@@ -28,6 +29,9 @@
 <style>
 	*{padding: 0;margin: 0;}
 	ul, ol, li{list-style: none;}
+	.blank20{clear: both;height: 0.4rem;background: #f7f7f7;}
+	.vux-header{background: #fff;}
+	.vux-header-title-area, .vux-header .vux-header-title{color: #111;}
 	.walletNotice{font-size: 0.3rem;}
 	.walletNotice ul{padding: 0.3rem;line-height: 0.6rem;color: #111;clear: both;}
 	.walletNotice ul li div{font-size: 0.28rem;margin-left: 1em;}
