@@ -73,24 +73,22 @@
     </div>
 </template>
 
-<style>
+<style scoped>
   @import '../../static/css/index.css'
 </style>
 
 <script>
   import XHeader from 'vux/src/components/x-header'
   import Actionsheet from 'vux/src/components/actionsheet'
-  import AppFooter from './footer'
 
 	export default {
 	  name: 'vipiao',
 	  data () {
 	    return {
-        
+        msg: "hello world"
 	    }
 	  },
     components: {
-      AppFooter,
       XHeader,
       Actionsheet
     },

@@ -1,9 +1,10 @@
 <template>
 	<div class="myWallet">
 		<div class="top">
-			<x-header :left-options="{backText: ''}">我的钱包
-				<router-link to="/notice" slot="right">说明</router-link>
-			</x-header>
+			<p class="topTitle myWalletTopTitle">
+				<router-link to="/"><img src="../assets/image/ic_nav_backarrow.png"></router-link>
+				我的钱包<router-link to="/notice" class="rightNotice">说明</router-link>
+			</p>
 			<div class="canWithdraw">
 				<img src="../assets/image/wallet1.png">
 				<ul>
@@ -37,15 +38,11 @@
 	</div>
 </template>
 
-<style>
+<style scoped>
 	@import '../../static/css/myWallet.css'
 </style>
 
 <script>
-	import XHeader from 'vux/src/components/x-header'
-	/*import Actionsheet from 'vux/src/components/actionsheet'
-	import ButtonTab from 'vux/src/components/button-tab/button-tab'
-	import ButtonTabItem from 'vux/src/components/button-tab/button-tab-item'*/
 	export default {
 		name: 'myWallet',
 		data(){
@@ -54,10 +51,7 @@
 			}
 		},
 		components: {
-			XHeader,
-			/*Actionsheet,
-			ButtonTab,
-			ButtonTabItem*/
+			
 		},
 		mounted: function(){
 			localStorage.setItem("selectedIncome", true);

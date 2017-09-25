@@ -31,7 +31,7 @@
 	</div>
 </template>
 
-<style type="text/css">
+<style type="text/css" scoped>
 	.content li{
 		border-bottom: solid 0.01rem #dedfe0;
 		padding: 0.2rem 0;

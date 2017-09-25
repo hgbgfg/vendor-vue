@@ -1,19 +1,38 @@
 *{
-	margin: 0;
-	padding: 0;
+  margin: 0;
+  padding: 0;
+}
+ul, li, ol{
+  list-style: none;
+  padding: 0;
+}
+p{
+  margin: 0;
 }
 a{
-	text-decoration: none;
-	color: #111;
+  text-decoration: none;
+  color: #2d2d2d;
 }
-ul,li,ol{
-	list-style: none;
+/*顶部导航统一样式*/
+.topTitle{
+  font-size: 0.34rem;
+  line-height: 0.92rem;
+  border-bottom: solid 0.01rem #ddd;
+  text-align: center;
+  position: relative;
+}
+.topTitle img{
+  width: 0.32rem;
+  position: absolute;
+  top: 0.3rem;
+  left: 0.3rem;
 }
 .top .vux-header{
 	background: #ed544a;
 }
-.top .vux-header-right a.router-link-active{
-	color: #fff;
+.top .rightNotice{
+	float: right;
+	margin-right: 0.3rem;
 }
 .canWithdraw{
 	background: #ed544a;

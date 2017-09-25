@@ -69,7 +69,7 @@ export default new Router({
     },
     {
         path: '/grabVotes',
-        name: 'grabVotes',
+        name: 'grabVote',
         component: grabVotes
     },
   ]

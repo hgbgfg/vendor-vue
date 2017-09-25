@@ -19,9 +19,10 @@
 	</div>
 </template>
 
-<style>
+<style scoped>
 	*{padding: 0;margin: 0;}
 	ul, ol, li{list-style: none;}
+	a{text-decoration: none; color: #111;}
 	.blank20{clear: both;height: 0.4rem;background: #f7f7f7;}
 	.vux-header{background: #fff;}
 	.vux-header-title-area, .vux-header .vux-header-title{color: #111;}

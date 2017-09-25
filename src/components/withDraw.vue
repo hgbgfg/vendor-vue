@@ -21,7 +21,7 @@
 	</div>
 </template>
 
-<style>
+<style scoped>
 	@import '../../static/css/withDraw.css'
 </style>
 

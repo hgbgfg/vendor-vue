@@ -1,0 +1,207 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+ul, li, ol{
+  list-style: none;
+  padding: 0;
+}
+p{
+  margin: 0;
+}
+a{
+  text-decoration: none;
+  color: #2d2d2d;
+}
+
+/*顶部导航统一样式*/
+.grabVote .topTitle{
+  font-size: 0.34rem;
+  line-height: 0.92rem;
+  text-align: center;
+  position: fixed;
+  top: 0;
+  background-color: #fff;
+  z-index: 1;
+  width: 100%;
+}
+.grabVote .topTitle img{
+  width: 0.32rem;
+  position: absolute;
+  top: 0.3rem;
+  left: 0.3rem;
+}
+
+.grabVote{
+	height: 13.3rem;
+	overflow-y: scroll;
+	background-color: #f5f5f5;
+}
+.grabVote .topTitle a img{
+	top: 0.36rem;
+}
+.searchBar{
+	width: 5.22rem;
+	height: 0.6rem;
+	line-height: 0.6rem;
+	background-color: #f0f2f5;
+	margin: 0.24rem 0 0.24rem 0.8rem;
+	border-radius: 2rem;
+}
+.grabVote .topTitle .searchBar img{
+	position: absolute;
+	left: 1.2rem;
+	top: 0.36rem;
+}
+.searchBar input{
+	width: 80%;
+	height: 100%;
+	border: none;
+	position: relative;
+	top: -0.04rem;
+	left: 10%;
+	background-color: #f0f2f5;
+	border-radius: 2rem;
+	outline: none;
+}
+.hasGrabed{
+	position: absolute;
+	line-height: 0.4rem;
+	font-size: 0.2rem;
+	top: -0.2rem;
+	right: 0.3rem;
+}
+.hasGrabed img{
+	position: relative;
+	left: 0;
+	top: 0.1rem;
+}
+.hasGrabed p{
+	position: relative;
+	top: 0.8rem;
+}
+.grabVote .filter{
+	width: 100%;
+	font-size: 0.26rem;
+	color: #2d2d2d;
+	display: flex;
+	justify-content: space-around;
+	border-top: solid 0.01rem #ddd;
+	border-bottom: solid 0.01rem #ddd;
+	position: fixed;
+	top: 1.07rem;
+	background-color: #fff;
+	z-index: 1;
+}
+.grabVote .filter li{
+	padding: 0 0.6rem;
+	margin: 0.2rem 0;
+	border-right: solid 0.01rem #ddd;
+}
+.grabVote .filter li:last-of-type{
+	border-right: none;
+}
+.grabVote .filter img{
+	width: 0.28rem;
+	vertical-align: middle;
+	margin-left: 0.1rem;
+}
+.programList{	
+	margin-top: 2.1rem;
+}
+.programList li{
+	padding: 0.3rem;
+	display: flex;
+	margin-bottom: 0.32rem;
+	border-bottom: solid 0.01rem #f7f7f7;
+	position: relative;
+	background-color: #fff;
+}
+.programList .left img{
+	width: 1.94rem;
+	margin-right: 0.2rem;
+}
+.programList .right{
+	line-height: 0.44rem;
+	font-size: 0.24rem;
+	color: #7d7d7d;
+	width: 4rem;
+}
+.programList .right>p:first-of-type{
+	width: 3.6rem;
+	font-size: 0.28rem;
+	color: #2d2d2d;
+	height: 0.88rem;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+}
+.programList .right div p:nth-of-type(1){
+	padding-left: 0.3rem;
+	background: url(../../src/assets/image/icon_order_clock@2x.png) 0 0.12rem no-repeat;
+	background-size: 0.2rem;
+}
+.programList .right div p:nth-of-type(2){
+	padding-left: 0.3rem;
+	background: url(../../src/assets/image/icon_order_position@2x.png) 0 0.08rem no-repeat;
+	background-size: 0.2rem;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+.programList .right div p:nth-of-type(3){
+	padding-left: 0.3rem;
+	background: url(../../src/assets/image/icon_order_ticket@2x.png) 0 0.08rem no-repeat;
+	background-size: 0.2rem;
+}
+.programList .right>p:nth-of-type(2){
+	color: #f74242;
+}
+.programList .right>p:nth-of-type(2) span{
+	font-size: 0.32rem;
+}
+.programList .right div{
+	border-right: dotted 1px #ddd;
+}
+.grabBtn{
+	display: inline-block;
+	padding: 0.14rem 0.54rem;
+	font-size: 0.3rem;
+	color: #111;
+	background: rgba(231,203,45,0.48);
+	border-radius: 0.72rem;
+	position: absolute;
+	bottom: -0.15rem;
+	right: 0.3rem;
+	box-shadow: 0 0.1rem 0.28rem #e7cb2d;
+}
+.votesNum{
+	font-size: 0.24rem;
+	color: #4d4d4d;
+	width: 1rem;
+	line-height: 2.8rem;
+	text-align: center;
+}
+.grabVote .loadMore{
+	font-size: 0.24rem;
+	text-align: center;
+	margin-bottom: 0.2rem;
+	color: #aaa;
+}
+
+.grabVote .mask{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 13.34rem;
+	z-index: 1;
+	background-color: #aaa;
+	opacity: 0.7;
+	display: none;
+}
+.grabVote .fillterPage{
+	display: none;
+}

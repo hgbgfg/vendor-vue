@@ -13,7 +13,7 @@
 	</div>
 </template>
 
-<style>
+<style scoped>
 	@import '../../static/css/changeDetail.css'
 </style>
 
