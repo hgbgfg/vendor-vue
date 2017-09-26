@@ -25,16 +25,18 @@
 		name: 'changeDetail',
 		data(){
 			return {
-				selectedIncome: JSON.parse(localStorage.getItem("selectedIncome")),
-				selectedDraw: JSON.parse(localStorage.getItem("selectedDraw")),
-				selectedDeposit: JSON.parse(localStorage.getItem("selectedDeposit"))
+				selectedIncome: location.href.indexOf("changeDetail_income")>-1 ? true :false,
+				selectedDraw: location.href.indexOf("changeDetail_draw")>-1 ? true : false,
+				selectedDeposit: location.href.indexOf("changeDetail_deposit")>-1 ? true : false
 			}
 		},
 		created: function(){
 			
 		},
 		mounted(){
-			
+			if (location.href.indexOf("changeDetail_income")==-1 && location.href.indexOf("changeDetail_draw")==-1 && location.href.indexOf("changeDetail_deposit")==-1) {
+				this.selectedIncome = true;
+			}
 		},
 		components: {
 			Tab,
@@ -48,25 +50,16 @@
 						this.selectedIncome = false;
 						this.selectedDraw = false;
 						this.selectedDeposit = true;
-						localStorage.setItem("selectedIncome", false);
-						localStorage.setItem("selectedDraw", false);
-						localStorage.setItem("selectedDeposit", true);
 						break;
 					case "draw":
 						this.selectedIncome = false;
 						this.selectedDraw = true;
 						this.selectedDeposit = false;
-						localStorage.setItem("selectedIncome", false);
-						localStorage.setItem("selectedDraw", true);
-						localStorage.setItem("selectedDeposit", false);
 						break;
 					default:
 						this.selectedIncome = true;
 						this.selectedDraw = false;
 						this.selectedDeposit = false;
-						localStorage.setItem("selectedIncome", true);
-						localStorage.setItem("selectedDraw", false);
-						localStorage.setItem("selectedDeposit", false);
 						break;
 				}
 			},
