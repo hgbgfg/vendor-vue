@@ -33,7 +33,7 @@
         </div>
       </div>
       <div class="myOrder">
-        <p>我的订单<img src="../assets/image/ic_arrow_right@2x.png"></p>
+        <router-link to="/manageOrder"><p>我的订单<img src="../assets/image/ic_arrow_right@2x.png"></p></router-link>
         <ul>
           <li>
             <p><img src="../assets/image/ic_hom_order_waitsend@2x.png">待发货</p>
@@ -94,6 +94,9 @@
     },
     methods: {
 
+    },
+    mounted(){
+      this.$store.state.fromPage = "index";
     }
 	}
 </script>

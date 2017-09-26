@@ -7,7 +7,7 @@
 				<img src="../assets/image/icon_order_search@2x.png">
 				<input type="text" name="search" placeholder="请输入节目名称">
 			</p>
-			<router-link to="/"><div class="hasGrabed">
+			<router-link to="/manageOrder"><div class="hasGrabed">
 				<img src="../assets/image/icon_order_yqbtn@2x.png">
 				<p>已抢订单</p>
 			</div></router-link>
@@ -150,10 +150,11 @@
 					$(".filter li:eq(2)").css("color", "#ff4a53");
 				}
 				console.log(data);
-			}
+			},
 		},
 		mounted(){
-			document.getElementsByClassName("grabVote")[0].addEventListener("scroll", this.scrollUpdata);
+			$(".grabVote")[0].addEventListener("scroll", this.scrollUpdata);
+			this.$store.state.fromPage = "grabVotes";
 		}
 	}
 </script>

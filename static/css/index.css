@@ -149,7 +149,7 @@ a{
   text-align: center;
   color: #7d7d7d;
 }
-.myOrder>p{
+.myOrder>a>p{
   height: 0.96rem;
   line-height: 1rem;
   font-size: 0.36rem;
@@ -157,7 +157,7 @@ a{
   padding: 0 0.3rem;
   border-bottom: solid 1px #ddd;
 }
-.myOrder>p>img{
+.myOrder>a>p>img{
   float: right;
   width: 0.32rem;
   height: 0.32rem;

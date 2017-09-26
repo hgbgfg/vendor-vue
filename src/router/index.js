@@ -10,6 +10,7 @@ import changeDetail_income from '@/components/changeDetail_income'
 import changeDetail_draw from '@/components/changeDetail_draw'
 import changeDetail_deposit from '@/components/changeDetail_deposit'
 import grabVotes from '@/components/grabVotes'
+import manageOrder from '@/components/manageOrder'
 
 Vue.use(Router)
 
@@ -72,5 +73,10 @@ export default new Router({
         name: 'grabVote',
         component: grabVotes
     },
+    {
+        path: '/manageOrder',
+        name: 'manageOrder',
+        component: manageOrder
+    }
   ]
 })
