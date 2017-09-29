@@ -87,17 +87,17 @@
 				that.isLoading = true;
 				this.$http.get("/api/v5/home/data?"+data).then(function(res){
 					if (res.body.status_code==200) {
-						console.log(res);
+						// console.log(res);
 						that.programCategory = res.body.data.program_category;
 						that.listData = that.listData.concat(res.body.data.program_list.programs);
-						that.isLoading = false;
-						that.page = that.page + 1;
 						var total = res.body.data.program_list.pagination.total;
 						var curPage = res.body.data.program_list.pagination.current_page;
 						if (total <= curPage*that.page_size) {
 							$(".loadMore").text("别拉啦，没有了...");
 							that.hasMore = false;
 						}
+						that.page = that.page + 1;
+						that.isLoading = false;
 					}
 				}, function(res){
 

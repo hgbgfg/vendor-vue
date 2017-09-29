@@ -11,10 +11,15 @@
 			<a href="tel://4000309755" class="customServer">联系客服</a>
 		</div>
 		<ul class="tabBtn">
-			<li class="selected" @click="curOrderStatus">待发货</li>
+			<li class="selected" @click="curOrderStatus">待发货<span class="nums">12</span></li>
 			<li @click="curOrderStatus">待确认</li>
 			<li @click="curOrderStatus">已完成</li>
 		</ul>
+		<div class="venderAddress">
+			<img src="../assets/image/icon_order_notice@2x.png">
+			<p>统一收货地址：张亮亮，13718247389，中国技术交易大厦A座1818</p>
+			<span v-on:click="closeVenderAddress">×</span>
+		</div>
 		<ul class="orderList">
 			<li>
 				<div class="top">
@@ -36,7 +41,7 @@
 				</div>
 				<div class="bottom">
 					<p>合计：<span>￥</span><span>900</span></p>
-					<p><span>取消订单</span><span>确认发货</span></p>
+					<p><span>取消订单</span><span><router-link to="/distribution">确认发货</router-link></span></p>
 				</div>
 			</li>
 			<li>
@@ -59,7 +64,7 @@
 				</div>
 				<div class="bottom">
 					<p>合计：<span>￥</span><span>900</span></p>
-					<p><span>取消订单</span><span>确认发货</span></p>
+					<p><span>取消订单</span><span><router-link to="/distribution">确认发货</router-link></span></p>
 				</div>
 			</li>
 		</ul>
@@ -87,6 +92,10 @@
 			curOrderStatus: function(event){
 				$(".tabBtn li").removeClass("selected");
 				$(event.target).addClass("selected");
+			},
+			closeVenderAddress: function(){
+				$(".manageOrder .venderAddress").hide();
+				$(".manageOrder .orderList").css("margin-top", "1.84rem");
 			}
 		}
 	}

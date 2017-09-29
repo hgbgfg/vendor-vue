@@ -14,101 +14,104 @@ a{
   color: #2d2d2d;
 }
 /*顶部导航统一样式*/
-.topTitle{
+.myWallet .topTitle{
   font-size: 0.34rem;
   line-height: 0.92rem;
   border-bottom: solid 0.01rem #ddd;
   text-align: center;
   position: relative;
+  background: #fff;
 }
-.topTitle img{
+.myWallet .topTitle img{
   width: 0.32rem;
   position: absolute;
   top: 0.3rem;
   left: 0.3rem;
 }
-.top .vux-header{
+.myWallet .top .vux-header{
 	background: #ed544a;
 }
-.top .rightNotice{
+.myWallet .top .rightNotice{
 	float: right;
 	margin-right: 0.3rem;
 }
-.canWithdraw{
+.myWallet .canWithdraw{
 	background: #ed544a;
 	font-size: 16px;
 	color: #fff;
 	height: 4rem;
 	margin-top: -1px;
 }
-.canWithdraw>img{
+.myWallet .canWithdraw>img{
 	float: left;
 	width: 1.8rem;
 	margin: 1rem 0.8rem 0 0.4rem;
 }
-.canWithdraw>ul{
+.myWallet .canWithdraw>ul{
 	position: relative;
 	top: 1.2rem;
 	line-height: 0.6rem;
 }
-.canWithdraw>ul li img{
+.myWallet .canWithdraw>ul li img{
 	width: 0.4rem;
 	float: right;
 	margin-top: 0.5rem;
 	margin-right: 0.4rem;
 }
-.canWithdraw>ul li:last-of-type{
+.myWallet .canWithdraw>ul li:last-of-type{
 	margin-top: 0.2rem;
 }
-.canWithdraw>ul li span{
+.myWallet .canWithdraw>ul li span{
 	font-size: 0.48rem;
 }
 
-.middle{
+.myWallet .middle{
 	clear: both;
 	height: 0.4rem;
 	background: #f7f7f7;
 }
 
-.bottom{
+.myWallet .bottom{
 	font-size: 0.32rem;
+	background: #fff;
 }
-.bottom ul li{
+.myWallet .bottom ul li{
 	height: 1rem;
 	line-height: 1rem;
 	padding-left: 0.84rem;
+	background: #fff;
 }
-.bottom ul li img{
+.myWallet .bottom ul li img{
 	float: right;
 	width: 0.4rem;
 	margin-top: 0.3rem;
 	margin-right: 0.4rem;
 }
-.bottom ul li:first-of-type{
+.myWallet .bottom ul li:first-of-type{
 	background: url(../../src/assets/image/ic_personal_icon_tixian_nor@2x.png) 0.2rem 0.24rem no-repeat;
 	background-size: 0.48rem;
 }
-.bottom ul li:first-of-type p{
-	border-bottom: solid 1px #ddd;
+.myWallet .bottom ul li:first-of-type p{
+	border-bottom: solid 0.01rem #ddd;
 }
-.bottom ul li:first-of-type span{
+.myWallet .bottom ul li:first-of-type span{
 	float: right;
 }
-.bottom ul li:last-of-type{
+.myWallet .bottom ul li:last-of-type{
 	background: url(../../src/assets/image/ic_personal_icon_shouzhi_nor@2x.png) 0.2rem 0.28rem no-repeat;
 	background-size: 0.48rem;
 }
-.bottom>p{
+.myWallet .bottom>p{
 	height: 1rem;
 	line-height: 1rem;
 	padding-left: 0.94rem;
 	background: url(../../src/assets/image/ic_personal_icon_bank_nor@2x.png) 0.12rem 0.2rem no-repeat;
 	background-size: 0.56rem;
 }
-.bottom>p>a>span{
+.myWallet .bottom>p>a>span{
 	float: right;
 }
-.bottom>p>a>img{
+.myWallet .bottom>p>a>img{
 	float: right;
 	width: 0.4rem;
 	margin-right: 0.4rem;

@@ -81,6 +81,7 @@
 		font-size: 0.24rem;
 		color: #9a9a9a;
 		margin-top: 0.2rem;
+		padding-bottom: 0.6rem;
 	}
 </style>
 
@@ -96,6 +97,9 @@
 
 		},
 		methods: {
+			
+		},
+		mounted(){
 			
 		}
 	}

@@ -94,6 +94,7 @@ a{
   font-size: 0.24rem;
   color: #2d2d2d;
   border-bottom: solid 1px #ddd;
+  background: #fff;
 }
 .changeInfo li{
   border-right: solid 1px #ddd;
@@ -156,6 +157,7 @@ a{
   color: #111;
   padding: 0 0.3rem;
   border-bottom: solid 1px #ddd;
+  background: #fff;
 }
 .myOrder>a>p>img{
   float: right;
@@ -172,6 +174,7 @@ a{
   padding-bottom: 0.4rem;
   border-bottom: solid 1px #ddd;
   margin-bottom: 0;
+  background: #fff;
 }
 .myOrder>ul li p:first-of-type img{
   width: 0.4rem;

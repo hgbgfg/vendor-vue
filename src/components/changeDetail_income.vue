@@ -26,6 +26,31 @@
 				<span>2017/04/16  14:20:23</span>
 				<span>+999998.30</span>
 			</li>
+			<li>
+				<h3>充值</h3>
+				<span>2017/04/16  14:20:23</span>
+				<span>+98.30</span>
+			</li>
+			<li>
+				<h3>退款</h3>
+				<span>2017/04/16  14:20:23</span>
+				<span>+198.30</span>
+			</li>
+			<li>
+				<h3>利息</h3>
+				<span>2017/04/16  14:20:23</span>
+				<span>+1198.30</span>
+			</li>
+			<li>
+				<h3>白送</h3>
+				<span>2017/04/16  14:20:23</span>
+				<span>+99998.30</span>
+			</li>
+			<li>
+				<h3>想得美</h3>
+				<span>2017/04/16  14:20:23</span>
+				<span>+999998.30</span>
+			</li>
 		</ul>
 		<p class="loadMore">到底了，别拉啦...</p>
 	</div>
@@ -56,6 +81,7 @@
 		font-size: 0.24rem;
 		color: #9a9a9a;
 		margin-top: 0.2rem;
+		padding-bottom: 0.6rem;
 	}
 </style>
 
@@ -72,7 +98,7 @@
 		},
 		mounted: function(){
 			this.$http.get("/api/v5/wallet/wallet-list?_vt=eyJpdiI6IjNVa2pHK1ZiTHYwZzZ5SkFaZ09iZVE9PSIsInZhbHVlIjoiTWNuaTZMWVlIOVwvOXZ4NUdtb0M4dzJcLzFLeTVQakNYY1NEQTBheVI0RWRVaW1MSENldkJOYkR4RE4rT1k0dFNTNzFDc3hHRU1ZMmpNdTVLNjNZU1ZwOVwvelBKZDFkUjRhNmxXV1A2K1c5SjlZcUlDb0U5Z3NSbVwvNmtFdDZmUWVBejRKRDBBT0VXOWY3WU10ZzV6TzZITnNaRHp0MUVETlhwSEtlOUVFSVN5ST0iLCJtYWMiOiIzYjBkMzlhMWQ3ZjEwZWNhZTU0ODg1YmZkOGYyZDkxN2UwM2U1ODI3MGEyY2ZlODM0YWMxMDFjMTJlMThlYTg4In0%3D&page=1&page_size=10").then(function(res){
-				console.log("请求成功");
+				
 			},function(res){
 				console.log("请求失败");
 			})

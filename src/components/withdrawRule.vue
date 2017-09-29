@@ -1,6 +1,6 @@
 <template>
 	<div class="withdrawRule">
-		<p><x-header :left-options="{backText: ''}">提现规则</x-header></p>
+		<p><x-header :left-options="{backText: ''}"><span>提现规则</span></x-header></p>
 		<div class="blank20"></div>
 		<ul>
 			<li>
@@ -25,7 +25,8 @@
 	a{text-decoration: none; color: #111;}
 	.blank20{clear: both;height: 0.4rem;background: #f7f7f7;}
 	.vux-header{background: #fff;}
-	.vux-header-title-area, .vux-header .vux-header-title{color: #111;}
+	.withdrawRule{background: #fff; padding-bottom: 0.6rem;}
+	.vux-header-title-area, .vux-header .vux-header-title span{color: #111;}
 	.withdrawRule{font-size: 0.3rem;}
 	.withdrawRule ul{padding: 0.3rem;line-height: 0.6rem;color: #111;clear: both;}
 	.withdrawRule ul li div{font-size: 0.28rem;margin-left: 1em;}

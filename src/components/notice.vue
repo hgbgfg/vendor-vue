@@ -1,6 +1,6 @@
 <template>
 	<div class="walletNotice">
-		<p><x-header :left-options="{backText: ''}">钱包说明</x-header></p>
+		<p><x-header :left-options="{backText: ''}"><span>钱包说明</span></x-header></p>
 		<div class="blank20"></div>
 		<ul>
 			<li>
@@ -32,8 +32,8 @@
 	a{text-decoration: none; color: #111;}
 	.blank20{clear: both;height: 0.4rem;background: #f7f7f7;}
 	.vux-header{background: #fff;}
-	.vux-header-title-area, .vux-header .vux-header-title{color: #111;}
-	.walletNotice{font-size: 0.3rem;}
+	.walletNotice .vux-header h1.vux-header-title span{color: #111;}
+	.walletNotice{font-size: 0.3rem;background: #fff;padding-bottom: 0.8rem;}
 	.walletNotice ul{padding: 0.3rem;line-height: 0.6rem;color: #111;clear: both;}
 	.walletNotice ul li div{font-size: 0.28rem;margin-left: 1em;}
 </style>

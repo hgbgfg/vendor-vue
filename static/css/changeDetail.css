@@ -1,56 +1,73 @@
 *{
 	margin: 0;
 	padding: 0;
-	color: #111;
 }
 ul, ol, li{
 	list-style: none;
 }
-a{
+.changeDetail a{
 	text-decoration: none;
 	color: #111;
+	display: inline-block;
 }
-.topTitle{
+.changeDetail{
+	min-height: 13.34rem;
+	background: #fff;
+}
+.changeDetail .topTitle{
 	font-size: 0.34rem;
 	line-height: 0.92rem;
 	border-bottom: solid 0.01rem #ddd;
 	text-align: center;
+	background: #fff;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 2;
 }
-.topTitle img{
+.changeDetail .topTitle img{
 	width: 0.32rem;
 	position: absolute;
 	top: 0.3rem;
 	left: 0.3rem;
 }
 
-.tabMenu{
+.changeDetail .tabMenu{
 	display: flex;
 	justify-content: space-around;
 	border-bottom: solid 0.01rem #ddd;
 	height: 0.8rem;
 	line-height: 0.4rem;
+	background: #fff;
+	width: 100%;
+	position: fixed;
+	top: 0.93rem;
+	left: 0;
+	z-index: 2;
 }
-.tabMenu li{
-	padding: 0 0.3rem;
+.changeDetail .tabMenu li a{
+	padding: 0.2rem 0.3rem;
 }
-.tabMenu a{
+.changeDetail .tabMenu a{
 	font-size: 0.28rem;
 	color: #7d7d7d;
 }
-.tabMenu a:first-of-type img{
+.changeDetail .tabMenu a:first-of-type img{
 	width: 0.22rem;
 }
-.tabMenu a:nth-of-type(2) img{
+.changeDetail .tabMenu a:nth-of-type(2) img{
 	width: 0.26rem;
 }
-.tabMenu a:flast-of-type img{
+.changeDetail .tabMenu a:flast-of-type img{
 	width: 0.24rem;
 }
-.selected{
+.changeDetail .selected{
 	border-bottom: solid 3px #fce86c;
 }
 
-.content{
+.changeDetail .content{
 	padding: 0.3rem;
 	font-size: 0.3rem;
+	margin-top: 1.6rem;
 }

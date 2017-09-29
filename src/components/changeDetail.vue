@@ -24,7 +24,7 @@
 	export default {
 		name: 'changeDetail',
 		data(){
-			return {
+			return {// 首次加载和刷新时的默认状态
 				selectedIncome: location.href.indexOf("changeDetail_income")>-1 ? true :false,
 				selectedDraw: location.href.indexOf("changeDetail_draw")>-1 ? true : false,
 				selectedDeposit: location.href.indexOf("changeDetail_deposit")>-1 ? true : false
@@ -33,7 +33,7 @@
 		created: function(){
 			
 		},
-		mounted(){
+		mounted(){// 二级路由默认值时显示的状态
 			if (location.href.indexOf("changeDetail_income")==-1 && location.href.indexOf("changeDetail_draw")==-1 && location.href.indexOf("changeDetail_deposit")==-1) {
 				this.selectedIncome = true;
 			}
@@ -63,6 +63,16 @@
 						break;
 				}
 			},
+		},
+		watch:{
+			$route(){// 监听路由变化过程中的状态，用于浏览器的前进后退时的变化
+				this.selectedIncome = location.href.indexOf("changeDetail_income")>-1 ? true :false;
+				this.selectedDraw = location.href.indexOf("changeDetail_draw")>-1 ? true : false;
+				this.selectedDeposit = location.href.indexOf("changeDetail_deposit")>-1 ? true : false;
+				if (location.href.indexOf("changeDetail_income")==-1 && location.href.indexOf("changeDetail_draw")==-1 && location.href.indexOf("changeDetail_deposit")==-1) {
+					this.selectedIncome = true;
+				}
+			}
 		}
 	}
 </script>

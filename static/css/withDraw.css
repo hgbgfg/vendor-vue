@@ -1,3 +1,15 @@
+*{
+	margin: 0;
+	padding: 0;
+	color: #111;
+}
+ul, ol, li{
+	list-style: none;
+}
+a{
+	text-decoration: none;
+	color: #111;
+}
 .blank20{
 	clear: both;
 	height: 0.4rem;
@@ -10,10 +22,12 @@
 .withDraw .vux-header .vux-header-title{
 	color: #111;	
 }
-.content{
+.withDraw .content{
 	text-align: center;
 	font-size: 0.34rem;
 	color: #111;
+	background: #fff;
+	padding-bottom: 0.6rem;
 }
 .content p:nth-of-type(1) img{
 	width: 1.64rem;

@@ -1,0 +1,206 @@
+/*公用样式*/
+*{
+	margin: 0;
+	padding: 0;
+}
+.distribution a{
+	color: #222;
+	font-size: 0.28rem;
+	text-decoration: none;
+}
+.distribution ul,ol,li{
+	list-style: none;
+}
+.distribution input,textarea{outline: none;border: none;}
+/*顶部导航*/
+.distribution .topTitle{
+	font-size: 0.34rem;
+	color: #111;
+	text-align: center;
+	height: 0.8rem;
+	line-height: 0.8rem;
+	border-bottom: solid 0.01rem #ddd;
+	background-color: #fff;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 2;
+	margin-bottom: 0.4rem;
+}
+.distribution .topTitle a img{
+	width: 0.34rem;
+	float: left;
+	margin-top: 0.2rem;
+	margin-left: 0.3rem;
+}
+.distribution .topTitle a.customServer{
+	float: right;
+	margin-right: 0.3rem;
+	font-size: 0.28rem;
+	color: #222;
+}
+/*主体内容*/
+.distribution .orderInfo{
+	font-size: 0.28rem;
+	margin-top: 1rem;
+}
+.distribution .orderInfo .top{
+	padding: 0.2rem 0.3rem;
+	background: #fff;
+}
+.distribution .orderInfo .top span{
+	font-size: 0.24rem;
+}
+.distribution .orderInfo .top span:last-of-type{
+	color: #ff6a71;
+	font-size: 0.26rem;
+	position: relative;
+	top: -0.2rem;
+	left: 2.3rem;
+}
+.distribution .orderInfo .middle{
+	width: 100%;
+	height: 2.58rem;
+	background: #f5f5f5;
+	padding: 0.2rem 0.3rem;
+	line-height: 0.44rem;
+	display: flex;
+}
+.distribution .orderInfo .middle .left{
+	width: 1.6rem;
+	height: 2.02rem;
+	margin-right: 0.24rem;
+}
+.distribution .orderInfo .middle .right div{
+	width: 3.6rem;
+	padding-right: 0.1rem;
+	border-right: dotted 0.01rem #ddd;
+}
+.distribution .orderInfo .middle .right>p:first-of-type{
+	font-size: 0.28rem;
+	color: #4d4d4d;
+	width: 3.6rem;
+	height: 0.8rem;
+	line-height: 0.4rem;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+}
+.distribution .orderInfo .middle .right div p:nth-of-type(1){
+	padding-left: 0.32rem;
+	background: url(../../src/assets/image/icon_order_clock@2x.png) 0 0.13rem no-repeat;
+	background-size: 0.2rem;
+}
+.distribution .orderInfo .middle .right div p:nth-of-type(2){
+	padding-left: 0.32rem;
+	background: url(../../src/assets/image/icon_order_position@2x.png) 0 0.1rem no-repeat;
+	background-size: 0.2rem;
+}
+.distribution .orderInfo .middle .right div p:nth-of-type(3){
+	padding-left: 0.32rem;
+	background: url(../../src/assets/image/icon_order_ticket@2x.png) 0 0.1rem no-repeat;
+	background-size: 0.2rem;
+}
+.distribution .orderInfo .middle>span{
+	height: 0.42rem;
+	font-size: 0.3rem;
+	color: #7d7d7d;
+}
+.distribution .orderInfo .middle>span:first-of-type{
+	position: relative;
+	top: 0.9rem;
+	left: 0.4rem;
+}
+.distribution .orderInfo .middle>span:last-of-type{
+	font-size: 0.24rem;
+	position: relative;
+	top: 1.4rem;
+	left: 0.1rem;
+}
+.distribution .orderInfo .bottom p{
+	height: 0.8rem;
+	line-height: 0.8rem;
+	border-bottom: solid 0.01rem #aaa;
+	padding: 0 0.3rem;
+	text-align: right;
+	font-size: 0.24rem;
+	color: #7d7d7d;
+	background: #fff;
+}
+.distribution .orderInfo .bottom p span{
+	font-size: 0.3rem;
+	color: #ff6a71;
+}
+.distribution .orderInfo .bottom p span:first-of-type{
+	font-size: 0.24rem;
+}
+/*收货人信息*/
+.distribution .venderAddress{
+	display: flex;
+	font-size: 0.28rem;
+	color: #4d4d4d;
+	height: 1.12rem;
+	padding: 0.14rem 0;
+	background: #fff;
+	margin: 0.2rem 0;
+	border-top: solid 0.01rem #aaa;
+	border-bottom: solid 0.01rem #aaa;
+	justify-content: space-around;
+	box-sizing: border-box;
+	margin-bottom: 0.2rem;
+}
+.distribution .venderAddress .left{
+	line-height: 1rem;
+}
+.distribution .venderAddress .right textarea{
+	width: 5.2rem;
+	height: 0.32rem;
+	margin-top: 0.1rem;
+	color: #4d4d4d;
+	font-size: 0.28rem;
+}
+
+.distribution .logisticsInfo{
+	font-size: 0.28rem;
+	color: #4d4d4d;
+	background: #fff;
+}
+.distribution .logisticsInfo li{
+	height: 0.84rem;
+	line-height: 0.84rem;
+	margin-left: 0.3rem;
+	padding-right: 0.3rem;
+	border-bottom: solid 0.01rem #ddd;
+}
+.distribution .logisticsInfo li input{
+	margin-left: 0.5rem;
+	font-size: 0.28rem;
+}
+.distribution .logisticsInfo li:first-of-type img{
+	float: right;
+	width: 0.4rem;
+	margin-top: 0.2rem;
+}
+.distribution .logisticsInfo li:last-of-type{
+	border-bottom: none;
+}
+.distribution .logisticsInfo li:last-of-type input{
+	width: 4.18rem;
+}
+.distribution .confirmBtn{
+	width: 6.64rem;
+	height: 1rem;
+	line-height: 1rem;
+	background: #ddd;
+	box-shadow: 0 0.04rem 0.12rem 0 rgba(18,18,18,0.09);
+	border-radius: 0.72rem;
+	margin-left: 0.44rem;
+	font-size: 0.3rem;
+	color: #aaa;
+	text-align: center;
+	margin-top: 0.32rem;
+	margin-bottom: 0.42rem;
+}
