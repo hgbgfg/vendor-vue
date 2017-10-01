@@ -12,6 +12,7 @@ import changeDetail_deposit from '@/components/changeDetail_deposit'
 import grabVotes from '@/components/grabVotes'
 import manageOrder from '@/components/manageOrder'
 import distribution from '@/components/distribution'
+import bindCard from "@/components/bindCard"
 
 Vue.use(Router)
 
@@ -75,7 +76,7 @@ export default new Router({
         component: grabVotes
     },
     {
-        path: '/manageOrder',
+        path: '/manageOrder:id',
         name: 'manageOrder',
         component: manageOrder
     },
@@ -83,6 +84,11 @@ export default new Router({
         path: '/distribution',
         name: 'distribution',
         component: distribution
+    },
+    {
+        path: '/bindCard',
+        name: 'bindCard',
+        component: bindCard
     }
   ]
 })

@@ -1,7 +1,7 @@
 <template>
 	<div class="distribution">
 		<div class="topTitle">		
-			<router-link to="/manageOrder"><img src="../assets/image/ic_nav_backarrow.png"></router-link>
+			<router-link to="/manageOrder:id=1"><img src="../assets/image/ic_nav_backarrow.png"></router-link>
 			发货
 			<a href="tel://4000309755" class="customServer">联系客服</a>
 		</div>

@@ -28,7 +28,7 @@
 			</ul>
 			<div class="middle"></div>
 			<p>
-				<router-link to="/">
+				<router-link to="/bindCard">
 					我的银行卡
 					<img src="../assets/image/ic_nav_nextarrow@2x.png">
 					<span>未绑定</span>

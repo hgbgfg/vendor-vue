@@ -16,7 +16,7 @@
 			<p><img src="../assets/image/ic_bank_card_unautherized@2x.png"></p>
 			<p>您还未绑定银行卡</p>
 			<p>提现需先绑定银行卡</p>
-			<router-link to="/">去绑定</router-link>
+			<router-link to="/bindCard"><p>去绑定</p></router-link>
 		</div>
 	</div>
 </template>

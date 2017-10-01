@@ -11,9 +11,9 @@
 			<a href="tel://4000309755" class="customServer">联系客服</a>
 		</div>
 		<ul class="tabBtn">
-			<li class="selected" @click="curOrderStatus">待发货<span class="nums">12</span></li>
-			<li @click="curOrderStatus">待确认</li>
-			<li @click="curOrderStatus">已完成</li>
+			<li v-bind:class="{selected: $route.params.id==':id=1'}" v-on:click="curOrderStatus" data-status="1">待发货<span class="nums">12</span></li>
+			<li v-bind:class="{selected: $route.params.id==':id=2'}" v-on:click="curOrderStatus" data-status="2">待确认</li>
+			<li v-bind:class="{selected: $route.params.id==':id=3'}" v-on:click="curOrderStatus" data-status="3">已完成</li>
 		</ul>
 		<div class="venderAddress">
 			<img src="../assets/image/icon_order_notice@2x.png">
@@ -90,8 +90,10 @@
 		},
 		methods: {
 			curOrderStatus: function(event){
-				$(".tabBtn li").removeClass("selected");
-				$(event.target).addClass("selected");
+				var status = $(event.target).data("status");
+				if (status) {
+					location.hash = "#/manageOrder:id="+status;
+				}
 			},
 			closeVenderAddress: function(){
 				$(".manageOrder .venderAddress").hide();
