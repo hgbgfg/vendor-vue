@@ -45,3 +45,5 @@ vue核心插件：vue-router、 vuex、 vue服务端渲染
 		js 接收方式 this.$route.query.uid
 
 9、将 router 的 mode 设为 history 可以去掉一直带着的的 "#" ，vue-router 默认是 hash 模式
+
+10、vue无法通过location.search获取 ？及其后面的参数
