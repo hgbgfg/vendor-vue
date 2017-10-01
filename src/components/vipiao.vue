@@ -1,7 +1,6 @@
 <template>
     <!-- 内容主体区域 -->
     <div class="vipiao">
-      <!-- <app-footer></app-footer> -->
       <x-header class="topNav">
         <span class="title">唯票卖家版</span>
         <img src="../assets/image/ic_nav_setting@2x.png" slot="overwrite-left" class="setting">
@@ -33,17 +32,17 @@
         </div>
       </div>
       <div class="myOrder">
-        <router-link to="/manageOrder:id=1"><p>我的订单<img src="../assets/image/ic_arrow_right@2x.png"></p></router-link>
+        <router-link to="/manageOrder/1"><p>我的订单<img src="../assets/image/ic_arrow_right@2x.png"></p></router-link>
         <ul>
-          <router-link to="/manageOrder:id=1"><li>
+          <router-link to="/manageOrder/1"><li>
             <p><img src="../assets/image/ic_hom_order_waitsend@2x.png">待发货</p>
             <p>3</p>
           </li></router-link>
-          <router-link to="/manageOrder:id=2"><li>
+          <router-link to="/manageOrder/2"><li>
             <p><img src="../assets/image/ic_hom_order_waitsure@2x.png">待确认</p>
             <p>14</p>
           </li></router-link>
-          <router-link to="/manageOrder:id=3"><li>
+          <router-link to="/manageOrder/3"><li>
             <p><img src="../assets/image/ic_hom_order_finish@2x.png">交易完成</p>
             <p>263</p>
           </li></router-link>

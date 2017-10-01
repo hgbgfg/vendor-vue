@@ -5,8 +5,11 @@ import App from './App'
 import router from './router'
 import Vuex from 'vuex'
 import store from './vuex/store'
+import util from '../static/js/util'
 
 Vue.config.productionTip = false
+
+Vue.prototype.$util = util
 
 /* eslint-disable no-new */
 new Vue({

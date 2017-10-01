@@ -31,4 +31,17 @@ vue核心插件：vue-router、 vuex、 vue服务端渲染
 
 6、通过vue的watch方法可以监听路由的变化，从而动态更改页面的状态（解决浏览器的前进、后退时，样式的同步更新）
 
-7、动态路由 通过在路由后面加上参数来展示相应的页面 如 :d=1
+7、动态路由 通过在路由后面加上参数来展示相应的页面 如 /:d
+
+8、接收url参数
+
+	1) 路由配置传参方式
+		在配置路由时 例如 "/firewall/authorize/:uid/:uname/:token"
+		页面url为 http://XXX.com/firewall/authorize/23/zhangman/232454
+
+		js 接收方式 this.$route.params.uid,
+	2) ?传参方式
+		例 http://XXX.com/firewall/authorize?uid=12&uname=zhangman&token=23243
+		js 接收方式 this.$route.query.uid
+
+9、将 router 的 mode 设为 history 可以去掉一直带着的的 "#" ，vue-router 默认是 hash 模式

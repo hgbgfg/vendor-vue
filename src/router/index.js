@@ -76,7 +76,7 @@ export default new Router({
         component: grabVotes
     },
     {
-        path: '/manageOrder:id',
+        path: '/manageOrder/:id',
         name: 'manageOrder',
         component: manageOrder
     },
