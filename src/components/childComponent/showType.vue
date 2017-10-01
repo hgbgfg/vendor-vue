@@ -2,7 +2,7 @@
 	<div class="showType">
 		<h3>演出类型</h3>
 		<ul>
-			<li v-for="item in programCategory" :data-id="item.id" v-on:click="getCategoryId">
+			<li v-for="item in programC" :data-id="item.id" v-on:click="getCategoryId">
 				{{item.title}}
 				<img src="../../assets/image/bg_order_mk_selected@2x.png">
 			</li>
@@ -122,7 +122,7 @@
 	import $ from 'jquery'
 	export default {
 		name: "showType",
-		props: ["programCategory"],
+		props: ["programC"],
 		data(){
 			return {
 				selected: false,
