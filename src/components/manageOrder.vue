@@ -5,7 +5,7 @@
 				<router-link to="/grabVotes"><img src="../assets/image/ic_nav_backarrow.png"></router-link>
 			</span>
 			<span v-else>
-				<router-link to="/"><img src="../assets/image/ic_nav_backarrow.png"></router-link>
+				<router-link to="/vipiao"><img src="../assets/image/ic_nav_backarrow.png"></router-link>
 			</span>
 			订单管理
 			<a href="tel://4000309755" class="customServer">联系客服</a>

@@ -1,5 +1,9 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+import loginRegister from '@/components/loginRegister'
+import login from '@/components/login'
+import forgotPassword from '@/components/forgotPassword'
+import setPassword from '@/components/setPassword'
 import vipiao from '@/components/vipiao'
 import myWallet from '@/components/myWallet'
 import notice from '@/components/notice'
@@ -20,6 +24,26 @@ export default new Router({
   routes: [
     {
         path: '/',
+        name: 'loginRegister',
+        component: loginRegister
+    },
+    {
+        path: '/login',
+        name: 'login',
+        component: login
+    },
+    {
+        path: '/forgotPassword',
+        name: 'forgotPassword',
+        component: forgotPassword
+    },
+    {
+        path: '/setPassword',
+        name: 'setPassword',
+        component: setPassword
+    },
+    {
+        path: '/vipiao',
         name: 'vipiao',
         component: vipiao
     },

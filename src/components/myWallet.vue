@@ -2,7 +2,7 @@
 	<div class="myWallet">
 		<div class="top">
 			<p class="topTitle myWalletTopTitle">
-				<router-link to="/"><img src="../assets/image/ic_nav_backarrow.png"></router-link>
+				<router-link to="/vipiao"><img src="../assets/image/ic_nav_backarrow.png"></router-link>
 				我的钱包<router-link to="/notice" class="rightNotice">说明</router-link>
 			</p>
 			<div class="canWithdraw">
@@ -20,7 +20,7 @@
 		<div class="bottom">
 			<ul>
 				<li>
-					<router-link to="/"><p>可用余额<img src="../assets/image/ic_nav_nextarrow@2x.png"><span>￥99999.00 </span></p></router-link>
+					<router-link to="/vipiao"><p>可用余额<img src="../assets/image/ic_nav_nextarrow@2x.png"><span>￥99999.00 </span></p></router-link>
 				</li>
 				<li>
 					<router-link to="/changeDetail">收支明细<img src="../assets/image/ic_nav_nextarrow@2x.png"></router-link>
