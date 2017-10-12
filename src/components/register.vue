@@ -1,8 +1,8 @@
 <template>
-	<div class="forgotPassword">
+	<div class="register">
 		<p class="topTitle">
-			<router-link to="/login"><img src="../assets/image/ic_nav_backarrow.png"></router-link>
-			忘记密码
+			<router-link to="/"><img src="../assets/image/ic_nav_backarrow.png"></router-link>
+			注册
 		</p>
 		<ul class="middle">
 			<li>
@@ -17,37 +17,42 @@
 			<a href="javascript:;" v-if="isActive"><p v-bind:class="{active: isActive}" v-on:click="verifyCode">下一步</p></a>
 			<p class="noActive" v-else>下一步</p>
 		</div>
+		<p class="protocol"><input type="checkbox" name="checkbox" checked=""> 我已阅读并同意《唯票卖家版服务协议》</p>
 		<div class="layer" v-if="layer">{{message}}</div>
 	</div>
 </template>
 
 <style type="text/css" scoped="">
-	.forgotPassword{ font-size: 0.32rem; height: 11.26rem; background: #fff; }
-	.forgotPassword .topTitle{
+	.register{ font-size: 0.32rem; height: 11.26rem; background: #fff; }
+	.register .topTitle{
 	  font-size: 0.34rem;line-height: 0.92rem;border-bottom: solid 0.01rem #ddd;
 	  text-align: center;position: relative;background: #fff;color: #111;
 	}
-	.forgotPassword .topTitle img{width: 0.32rem;position: absolute;top: 0.3rem;left: 0.3rem;}
-	.forgotPassword .middle{ margin: 0.4rem 0.6rem; }
-	.forgotPassword .middle li{ height: 1.2rem; line-height: 1.2rem; border-bottom: solid 0.01rem #ddd; padding-left: 0.68rem; background: url(../assets/image/ic_login_number@2x.png) 0.1rem 0.4rem no-repeat; background-size: 0.4rem; }
-	.forgotPassword .middle li:last-of-type{ background: url(../assets/image/ic_login_verificatcode@2x.png) 0.1rem 0.4rem no-repeat; background-size: 0.4rem; }
-	.forgotPassword .middle li input { border: none; font-size: 0.3rem; width: 100%; }
-	.forgotPassword .middle li:last-of-type input { width: 60%; }
-	.forgotPassword .middle li:last-of-type button { 
+	.register .topTitle img{width: 0.32rem;position: absolute;top: 0.3rem;left: 0.3rem;}
+	.register .middle{ margin: 0.4rem 0.6rem; }
+	.register .middle li{ height: 1.2rem; line-height: 1.2rem; border-bottom: solid 0.01rem #ddd; padding-left: 0.68rem; background: url(../assets/image/ic_login_number@2x.png) 0.1rem 0.4rem no-repeat; background-size: 0.4rem; }
+	.register .middle li:last-of-type{ background: url(../assets/image/ic_login_verificatcode@2x.png) 0.1rem 0.4rem no-repeat; background-size: 0.4rem; }
+	.register .middle li input { border: none; font-size: 0.3rem; width: 100%; }
+	.register .middle li:last-of-type input { width: 60%; }
+	.register .middle li:last-of-type button { 
 		width: 38%; background: #fff; border: none; border-left: solid 0.01rem #ddd;
 		line-height: 0.6rem; color: #3a9fff; font-size: 0.3rem;
 	}
-	.forgotPassword .bottom p.noActive{ 
+	.register .bottom p.noActive{ 
 		height: 1rem; width: 6.7rem; border-radius: 2rem; margin-left: 0.4rem;
 		background: #ddd; line-height: 1rem; text-align: center;
 		font-size: 0.34rem; color: #fff; margin-top: 0.6rem;
 	}
-	.forgotPassword .bottom a p.active { 
+	.register .bottom a p.active { 
 		height: 1rem; width: 6.7rem; border-radius: 2rem; margin-left: 0.4rem;
 		background: #fce86c; color: #111; line-height: 1rem; text-align: center;
 		font-size: 0.34rem; margin-top: 0.6rem;
 	}
-	.forgotPassword .layer { 
+	.register .protocol{ 
+		text-align: center; font-size: 0.24rem; color: #7d7d7d;margin-top: 0.16rem; 
+	}
+	.register .protocol input{ vertical-align: middle; }
+	.register .layer { 
 		padding: 10px 20px; background: rgba(0,0,0,0.4); position: fixed; top: 24%; left: 25%; 
 		color: #fff;
 	}
@@ -70,9 +75,6 @@
 		},
 		mounted(){
 			var that = this;
-
-			that.$store.state.passwordOrigin = "forgotPassword";
-
 			$("input[name='mobile']").blur(function(){
 				var mobile = $(this).val();
 				if (!/^(0|86|17951)?(13[0-9]|15[012356789]|17[03678]|18[0-9]|14[57])[0-9]{8}$/.test(mobile)) {
@@ -100,7 +102,7 @@
 			getVerificationCode: function(){
 				var data = {
                     phone: $("input[name='mobile']").val(), //   string  是   手机号
-                    mode: 1 //string "0"为注册，“1”为修改密码
+                    mode: 0 //string "0"为注册，“1”为修改密码
                 };
 				this.$http.post('/api/v3/user/sms-captcha',data,{emulateJSON: true}).then(function(res){
 					if (res.body.status_code==200) {
@@ -125,9 +127,18 @@
 			verifyCode: function(){
 				var data = {
 					phone: $("input[name='mobile']").val(),
-					mode: "1",
+					mode: "0",
 					captcha: $("input[name='verificationCode']").val()
 				};
+				if (!$("input[name='checkbox']").prop("checked")) {
+					var that = this;
+					that.message = "请同意唯票卖家版服务协议";
+					that.layer = true;
+					setTimeout(function(){
+						that.layer = false;
+					} ,2000)
+					return;
+				}
 				this.$http.post('/api/v3/user/check-captcha',data,{emulateJSON: true}).then(function(res){
 					if (res.body.status_code==200) {
 						localStorage.setItem("userName", data.phone);

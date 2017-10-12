@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import loginRegister from '@/components/loginRegister'
 import login from '@/components/login'
+import register from '@/components/register'
 import forgotPassword from '@/components/forgotPassword'
 import setPassword from '@/components/setPassword'
 import vipiao from '@/components/vipiao'
@@ -31,6 +32,11 @@ export default new Router({
         path: '/login',
         name: 'login',
         component: login
+    },
+    {
+        path: '/register',
+        name: 'register',
+        component: register
     },
     {
         path: '/forgotPassword',

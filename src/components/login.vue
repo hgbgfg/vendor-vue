@@ -1,16 +1,19 @@
 <template>
 	<div class="login">
+		<p class="topTitle">
+			<router-link to="/"><img src="../assets/image/ic_nav_backarrow.png"></router-link>
+		</p>
 		<img src="../assets/image/pic_splash_logo@2x.png" class="top">
 		<ul class="middle">
 			<li>
-				<input type="number" maxlength="11" name="mobile" placeholder="请输入手机号" v-model="items.value1" ref="type1">
+				<input type="tel" maxlength="11" name="mobile" placeholder="请输入手机号" v-model="items.value1" ref="type1">
 			</li>
 			<li>
 				<input type="password" name="password" placeholder="请输入密码" v-model="items.value2" ref="type2">
 			</li>
 		</ul>
 		<div class="bottom">
-			<router-link to="/vipiao" v-if="isActive"><p v-bind:class="{active: isActive}">登录</p></router-link>
+			<a href="javascript:;" v-if="isActive"><p class="active" v-on:click="toVipiao">登录</p></a>
 			<p class="noActive" v-else>登录</p>
 			<router-link to="forgotPassword"><p>忘记密码</p></router-link>
 		</div>
@@ -20,7 +23,12 @@
 </template>
 
 <style type="text/css" scoped="">
-	.login{ font-size: 0.32rem; height: 13.34rem; background: #fff; }
+	.login{ font-size: 0.32rem; height: 11.18rem; background: #fff; }
+	.login .topTitle{
+	  font-size: 0.34rem;line-height: 0.92rem;border-bottom: solid 0.01rem #ddd;
+	  text-align: center;position: relative;background: #fff;color: #111;
+	}
+	.login .topTitle img{width: 0.32rem;position: absolute;top: 0.3rem;left: 0.3rem;}
 	.login .top{ width: 3.2rem; margin-top: 1rem; margin-left: 2.16rem; }
 	.login .middle{ margin: 0.4rem 0.6rem; }
 	.login .middle li{ height: 1.2rem; line-height: 1.2rem; border-bottom: solid 0.01rem #ddd; padding-left: 0.68rem; background: url(../assets/image/ic_login_number@2x.png) 0.1rem 0.4rem no-repeat; background-size: 0.4rem; }
@@ -84,16 +92,30 @@
 				}
 			})
 		},
-		mothods: {
-
+		methods: {
+			toVipiao: function(){
+				var data = {
+					user_name: $("input[name='mobile']").val(),
+					pass_word: $("input[name='password']").val()
+				};
+				this.$http.post("/api/v3/user/login", data, {emulateJSON: true}).
+				then(function(res){
+					if (res.body.status_code==200) {
+						localStorage.setItem("_vt", res.body.data.token);
+						location.hash = "vipiao";
+					}else{
+						alert(res.body.message);
+					}
+				}, function(error){
+					console.log(error);
+				})
+			}
 		},
 		watch: {// key 是需要观察的表达式，值是对应的回调函数。Vue实例将会在实例化是调用 $watch()，遍历watch对象的每一个属性。
 			items: {
 				handler: function(val, oldval){
 					if (/^(0|86|17951)?(13[0-9]|15[012356789]|17[03678]|18[0-9]|14[57])[0-9]{8}$/.test(this.$refs.type1.value) && /^[\@A-Za-z0-9\!\#\$\%\^\&\*\.\~]{6,12}$/.test(this.$refs.type2.value)) {
 						this.isActive = true;
-						localStorage.setItem("userName", this.$refs.type1.value);
-						localStorage.setItem("password", this.$refs.type2.value);
 					}// ref用来给元素或子组件注册引用信息。引用信息将会注册在父组件的$refs对象上。如果在普通DOM元素上使用，引用指向的就是DOM元素（$refs 返回所有注册过ref的DOM元素）;如果在子组件上，引用就指向组件实例。
 					else{
 						this.isActive = false;

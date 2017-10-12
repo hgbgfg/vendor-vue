@@ -2,12 +2,12 @@
 	<div class="grabVote">
 		<show-type v-bind:programC="programCategory" v-on:getCategroyFromChild="showCategoryFromChild" class="fillterPage"></show-type>
 		<div class="topTitle">
-			<router-link to="/"><img src="../assets/image/ic_nav_backarrow.png"></router-link>
+			<router-link to="/vipiao"><img src="../assets/image/ic_nav_backarrow.png"></router-link>
 			<p class="searchBar">
 				<img src="../assets/image/icon_order_search@2x.png">
 				<input type="text" name="search" placeholder="请输入节目名称">
 			</p>
-			<router-link to="/manageOrder:id=1"><div class="hasGrabed">
+			<router-link to="/manageOrder/1"><div class="hasGrabed">
 				<img src="../assets/image/icon_order_yqbtn@2x.png">
 				<p>已抢订单</p>
 			</div></router-link>

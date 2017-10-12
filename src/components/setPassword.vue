@@ -6,7 +6,12 @@
 		</p>
 		<ul class="middle">
 			<li>
-				<input type="password" name="password" placeholder="请设置新密码（6~12位数字、字母组合）" v-model="items.value1" ref="type1">
+				<span v-if="passwordOrigin=='forgotPassword'">					
+					<input type="password" name="password" placeholder="请设置新密码（6~12位数字、字母组合）" v-model="items.value1" ref="type1">
+				</span>
+				<span v-else>
+					<input type="password" name="password" placeholder="请设置密码（6~12位数字、字母组合）" v-model="items.value1" ref="type1">
+				</span>
 			</li>
 			<li>
 				<input type="password" name="againPassword" placeholder="请再次输入新密码" v-model="items.value2" ref="type2">
@@ -21,7 +26,7 @@
 </template>
 
 <style type="text/css" scoped="">
-	.setPassword{ font-size: 0.32rem; height: 13.34rem; background: #fff; }
+	.setPassword{ font-size: 0.32rem; height: 11.16rem; background: #fff; }
 	.setPassword .topTitle{
 	  font-size: 0.34rem;line-height: 0.92rem;border-bottom: solid 0.01rem #ddd;
 	  text-align: center;position: relative;background: #fff;color: #111;
@@ -58,11 +63,15 @@
 					value2: ''
 				},
 				layer: false,
-				message: ''
+				message: '',
+				passwordOrigin: ''
 			};
 		},
 		mounted(){
 			var that = this;
+
+			that.passwordOrigin = that.$store.state.passwordOrigin;
+
 			$("input[name='againPassword']").blur(function(){
 				var againPassword = $(this).val();
 				if (againPassword != $("input[name='password']").val()) {
@@ -88,7 +97,7 @@
 		methods: {
 			successChange: function(){
 				var data = {
-					userName: "13720081071",
+					userName: localStorage.getItem("userName"),
 					password: $("input[name='againPassword']").val(),
 					captcha: localStorage.getItem("verificationCode")
 				};
@@ -108,11 +117,9 @@
 				handler: function(val, oldval){
 					if (/^[\@A-Za-z0-9\!\#\$\%\^\&\*\.\~]{6,12}$/.test(this.$refs.type1.value) && this.$refs.type2.value == this.$refs.type1.value) {
 						this.isActive = true;
-						localStorage.setItem("password", this.$refs.type2.value);
 					}// ref用来给元素或子组件注册引用信息。引用信息将会注册在父组件的$refs对象上。如果在普通DOM元素上使用，引用指向的就是DOM元素（$refs 返回所有注册过ref的DOM元素）;如果在子组件上，引用就指向组件实例。
 					else{
 						this.isActive = false;
-						localStorage.clear();
 					}
 				},
 				deep: true				

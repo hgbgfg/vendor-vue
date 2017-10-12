@@ -16,23 +16,23 @@
 		</div>
 		<div class="bottom">
 			<router-link to="/login"><p>登录</p></router-link>
-			<p>注册账号</p>
+			<router-link to="/register"><p>注册账号</p></router-link>
 		</div>
 	</div>
 </template>
 
 <style type="text/css" scoped="">
 	@import url("../../node_modules/swiper/dist/css/swiper.min.css");
-	.loginRegister{ font-size: 0.32rem; height: 13.34rem; background: #fff; }
+	.loginRegister{ font-size: 0.32rem; height: 11.16rem; background: #fff; }
 	.loginRegister .top{ width: 3.2rem; margin-top: 1rem; margin-left: 2.16rem; }
-	.loginRegister .middle img{ width: 4.8rem; margin-top: 1.12rem; margin-left: 1.36rem; }
+	.loginRegister .middle img{ width: 4.8rem; margin-top: 0.6rem; margin-left: 1.36rem; }
 	.loginRegister .middle p{ margin: 0 auto; text-align: center; font-size: 0.48rem; color: #111;}
-	.loginRegister .bottom a p:first-of-type{ 
+	.loginRegister .bottom a:first-of-type p{ 
 		height: 1rem; width: 6.7rem; border-radius: 2rem; margin-left: 0.4rem;
 		background: #fceb6c; line-height: 1rem; text-align: center;
-		font-size: 0.34rem; color: #111; margin-top: 2.3rem;
+		font-size: 0.34rem; color: #111; margin-top: 1rem;
 	}
-	.loginRegister .bottom p:last-of-type{ text-align: center; font-size: 0.3rem; color: #7d7d7d; margin-top: 0.4rem; }
+	.loginRegister .bottom a:last-of-type p{ text-align: center; font-size: 0.3rem; color: #7d7d7d; margin-top: 0.4rem; }
 </style>
 
 <script type="text/javascript">
@@ -51,8 +51,8 @@
 					pagination: '.swiper-pagination'
 				});
 			})
-			var userName = localStorage.getItem("userName");
-			if (userName) {
+			var _vt = localStorage.getItem("_vt");
+			if (_vt) {
 				location.hash = "vipiao";
 			}
 		},
