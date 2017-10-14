@@ -5,7 +5,10 @@ import login from '@/components/login'
 import register from '@/components/register'
 import forgotPassword from '@/components/forgotPassword'
 import setPassword from '@/components/setPassword'
+import personalInfo from '@/components/personalInfo'
 import vipiao from '@/components/vipiao'
+import noticeCenter from '@/components/noticeCenter'
+import noticeInfo from '@/components/noticeInfo'
 import myWallet from '@/components/myWallet'
 import notice from '@/components/notice'
 import withDraw from '@/components/withDraw'
@@ -52,6 +55,21 @@ export default new Router({
         path: '/vipiao',
         name: 'vipiao',
         component: vipiao
+    },
+    {
+        path: '/personalInfo',
+        name: 'personalInfo',
+        component: personalInfo
+    },
+    {
+        path: '/noticeCenter',
+        name: 'noticeCenter',
+        component: noticeCenter
+    },
+    {
+        path: '/noticeInfo',
+        name: 'noticeInfo',
+        component: noticeInfo
     },
     {
     	path: '/myWallet',

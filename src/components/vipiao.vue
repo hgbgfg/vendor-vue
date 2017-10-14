@@ -1,11 +1,11 @@
 <template>
     <!-- 内容主体区域 -->
     <div class="vipiao">
-      <x-header class="topNav">
+      <div class="topNav">
+        <router-link to="/personalInfo"><img src="../assets/image/ic_nav_setting@2x.png" class="setting"></router-link>
         <span class="title">唯票卖家版</span>
-        <img src="../assets/image/ic_nav_setting@2x.png" slot="overwrite-left" class="setting">
-        <img src="../assets/image/ic_nav_notice@2x.png" slot="right" class="message">
-      </x-header>
+        <router-link to="/noticeCenter"><img src="../assets/image/ic_nav_notice@2x.png" class="message"></router-link>
+      </div>
       <div class="userInfo">
         <span class="userHeader"><img src="../../static/images/header.png"></span>
         <ul>

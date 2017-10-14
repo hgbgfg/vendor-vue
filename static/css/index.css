@@ -1,49 +1,33 @@
-*{
-  margin: 0;
-  padding: 0;
+
+.vipiao .topNav{
+  display: flex;
+  justify-content: space-between;
+  height: 1rem;
+  border-bottom: solid 0.01rem #ddd;
 }
-ul, li, ol{
-  list-style: none;
-  padding: 0;
-}
-p{
-  margin: 0;
-}
-a{
-  text-decoration: none;
-  color: #2d2d2d;
-}
-.vipiao .vux-header{
-  background: #fff;
-  border-bottom: solid 1px #ddd;
-}
-.vipiao .vux-header .vux-header-title{
-  color: #111;
-}
-.title{
+.vipiao .title{
   font-size: 0.34rem;
+  margin-top: 0.26rem;
 }
-.setting{
+.vipiao .setting{
   width: 0.4rem;
   height: 0.4rem;
-  position: relative;
-  top: 0px;
-  left: -0.16rem;
+  margin-left: 0.3rem;
+  margin-bottom: 0.2rem;
 }
-.message{
+.vipiao .message{
   width: 0.4rem;
   height: 0.4rem;
-  position: relative;
-  top: 0px;
-  right: -0.08rem;
+  margin-right: 0.3rem;
+  margin-bottom: 0.2rem;
 }
-.userInfo{
+.vipiao .userInfo{
   background: url(../../src/assets/image/bg_login_botm@3x.png);
   background-size: 100%;
   height: 1.8rem;
   
 }
-.userInfo .userHeader{
+.vipiao .userInfo .userHeader{
   display: block;
   float: left;
   margin-left: 0.4rem;
@@ -53,25 +37,25 @@ a{
   border: solid 1px #eee;
   border-radius: 50%;
 }
-.userInfo .userHeader img{
+.vipiao .userInfo .userHeader img{
   border-radius: 50%;
   width: 90%;
   height: 90%;
   margin-top: 5%;
   margin-left: 5%;
 }
-.userInfo ul{
+.vipiao .userInfo ul{
   margin: 0;
   list-style: none;
   padding-top: 0.32rem;
   margin-left: 1.8rem;
   line-height: 0.42rem;
 }
-.userInfo ul li:first-of-type{
+.vipiao .userInfo ul li:first-of-type{
   font-size: 0.36rem;
   color: #111;
 }
-.userInfo ul li:last-of-type{
+.vipiao .userInfo ul li:last-of-type{
   background: #f5f5f5;
   width: 2rem;
   line-height: 0.5rem;
@@ -80,14 +64,14 @@ a{
   font-size: 0.24rem;
   padding-left: 0.2rem;
 }
-.userInfo ul li:last-of-type img{
+.vipiao .userInfo ul li:last-of-type img{
   width: 0.3rem;
   height: 0.36rem;
   position: relative;
   top: 0.08rem;
   margin-right: 0.06rem;
 }
-.changeInfo{
+.vipiao .changeInfo{
   display: flex;
   justify-content: space-between;
   padding: 0.4rem;
@@ -96,33 +80,33 @@ a{
   border-bottom: solid 1px #ddd;
   background: #fff;
 }
-.changeInfo li{
+.vipiao .changeInfo li{
   border-right: solid 1px #ddd;
   padding-right: 0.6rem;
 }
-.changeInfo li p:last-of-type{
+.vipiao .changeInfo li p:last-of-type{
   font-size: 0.3rem;
   margin-top: 0.2rem;
 }
-.changeInfo li:last-of-type{
+.vipiao .changeInfo li:last-of-type{
   margin-top: 0.2rem;
   border-right: none;
   color: #e64352;
 }
-.changeInfo li img{
+.vipiao .changeInfo li img{
   width: 0.24rem;
   height: 0.24rem;
   vertical-align: middle;
   margin-right: 0.12rem;
 }
-.notice{
+.vipiao .notice{
   display: flex;
   justify-content: space-around;
   font-size: 0.26rem;
   background: #f5f5f5;
   padding: 0.2rem 0;
 }
-.notice div{
+.vipiao .notice div{
   display: flex;
   justify-content: space-around;
   width: 7.1rem;
@@ -131,16 +115,16 @@ a{
   padding: 0.12rem 0.2rem;
   box-sizing: border-box;
 }
-.notice p:first-of-type img{
+.vipiao .notice p:first-of-type img{
   width: 0.48rem;
   height: 0.48rem;
   margin-top: 0.2rem;margin-right: 0.2rem;
 }
-.notice p:nth-of-type(2){
+.vipiao .notice p:nth-of-type(2){
   width: 4.8rem;
   line-height: 0.4rem;
 }
-.notice p:last-of-type{
+.vipiao .notice p:last-of-type{
   width: 0.92rem;
   height: 0.92rem;
   border-radius: 50%;
@@ -150,7 +134,7 @@ a{
   text-align: center;
   color: #7d7d7d;
 }
-.myOrder>a>p{
+.vipiao .myOrder>a>p{
   height: 0.96rem;
   line-height: 1rem;
   font-size: 0.36rem;
@@ -159,13 +143,13 @@ a{
   border-bottom: solid 1px #ddd;
   background: #fff;
 }
-.myOrder>a>p>img{
+.vipiao .myOrder>a>p>img{
   float: right;
   width: 0.32rem;
   height: 0.32rem;
   margin-top: 0.36rem;
 }
-.myOrder>ul{
+.vipiao .myOrder>ul{
   display: flex;
   justify-content: space-around;
   font-size: 0.28rem;
@@ -176,23 +160,23 @@ a{
   margin-bottom: 0;
   background: #fff;
 }
-.myOrder>ul li p:first-of-type img{
+.vipiao .myOrder>ul li p:first-of-type img{
   width: 0.4rem;
   height: 0.4rem;
   margin-right: 0.12rem;
   vertical-align: middle; 
 }
-.myOrder>ul li p:last-of-type{
+.vipiao .myOrder>ul li p:last-of-type{
   color: #111;
   font-size: 0.48rem;
   margin-top: 0.2rem;
   margin-left: 0.48rem;
 }
-.notOpen{
+.vipiao .notOpen{
   background: #f5f5f5;
   padding: 0.2rem 0;
 }
-.notOpen>p{
+.vipiao .notOpen>p{
   font-size: 0.36rem;
   color: #9d9d9d;
   height: 0.96rem;
@@ -201,10 +185,10 @@ a{
   padding: 0 0.3rem;
   border-bottom: solid 1px #ddd;
 }
-.notOpen>p>span{
+.vipiao .notOpen>p>span{
   float: right;
 }
-.notOpen>ul{
+.vipiao .notOpen>ul{
   background: #fafafa;
   margin-top: 0;
   margin-bottom: 0;
@@ -214,19 +198,19 @@ a{
   justify-content: space-around;
   padding: 0.5rem 0;
 }
-.notOpen>ul li p img{
+.vipiao .notOpen>ul li p img{
   width: 0.4rem;
   height: 0.4rem;
   vertical-align: middle;
   margin-right: 0.12rem;
 }
-.notOpen>ul li p:last-of-type{
+.vipiao .notOpen>ul li p:last-of-type{
   font-size: 0.48rem;
   color: #aaa;
   margin-top: 0.2rem;
   margin-left: 0.52rem;
 }
-.grabVotes{
+.vipiao .grabVotes{
   height: 2.4rem;
   line-height: 2.4rem;
   background: #f5f5f5;
@@ -234,7 +218,7 @@ a{
   padding-bottom: 0.6rem;
   position: relative;
 }
-.grabVotes span{
+.vipiao .grabVotes span{
   display: inline-block;
   padding: 0 1.1rem;
   background: #fce86c;
@@ -242,7 +226,7 @@ a{
   font-size: 0.6rem;
   line-height: 1rem
 }
-.grabVotes img{
+.vipiao .grabVotes img{
   position: absolute;
   top: 20px;
   right: 20%;
