@@ -10,7 +10,7 @@
 			</li>
 			<li>
 				<input type="number" name="verificationCode" placeholder="请输入验证码" v-model="items.value2" ref="type2">
-				<button name="getVerificationCode" v-on:click="getVerificationCode">获取验证码</button>
+				<button name="getVerificationCode" v-on:click="getVerificationCode" class="specialBtn">获取验证码</button>
 			</li>
 		</ul>
 		<div class="bottom">
@@ -104,15 +104,15 @@
                 };
 				this.$http.post('/api/v3/user/sms-captcha',data,{emulateJSON: true}).then(function(res){
 					if (res.body.status_code==200) {
-						$("button[name='getVerificationCode'").text("59"+"秒");
-						var content = parseInt($("button[name='getVerificationCode'").text());
+						$(".specialBtn").text("59"+"秒");
+						var content = parseInt($(".specialBtn").text());
 						var timer = setInterval(function(){
 							content--;
 							if (content==0) {
 								clearInterval(timer);
-								$("button[name='getVerificationCode'").text("获取验证码");
+								$(".specialBtn").text("获取验证码");
 							}else{
-								$("button[name='getVerificationCode'").text(content+"秒");
+								$(".specialBtn").text(content+"秒");
 							}
 						} ,1000)
 					}else{

@@ -97,8 +97,8 @@
 		methods: {
 			successChange: function(){
 				var data = {
-					userName: localStorage.getItem("userName"),
-					password: $("input[name='againPassword']").val(),
+					user_name: localStorage.getItem("userName"),
+					pass_word: $("input[name='againPassword']").val(),
 					captcha: localStorage.getItem("verificationCode")
 				};
 				this.$http.post("/api/v3/user/change-password", data, {emulateJSON: true}).then(function(res){
