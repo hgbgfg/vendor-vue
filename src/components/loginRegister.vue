@@ -5,15 +5,21 @@
 			<swiper-slide>
 				<img src="../assets/image/pic_splash01@2x.png">
 				<p>「抢单接单功能」</p>
+				<div class="swiper-pagination">
+					<span v-bind:class="{'swiper-pagination-bullet':true, 'swiper-pagination-bullet-active' : message}"></span>
+					<span v-bind:class="{'swiper-pagination-bullet':true, 'swiper-pagination-bullet-active' : !message}"></span>
+				</div>
 			</swiper-slide>
 			<swiper-slide>
 				<img src="../assets/image/pic_splash02@2x.png">
 				<p>「新上线，召集新卖家」</p>
+				<div class="swiper-pagination">
+					<span class="swiper-pagination-bullet"></span>
+					<span class="swiper-pagination-bullet swiper-pagination-bullet-active"></span>
+				</div>
 			</swiper-slide>
-			<div class="swiper-pagination" slot="pagination">
-				<span v-bind:class="{'swiper-pagination-bullet':true, 'swiper-pagination-bullet-active' : message}"></span>
-				<span v-bind:class="{'swiper-pagination-bullet':true, 'swiper-pagination-bullet-active' : !message}"></span>
-			</div>
+			<!-- 出错了，该处不显示 -->
+			<div class="swiper-pagination" slot="pagination"></div>
 		</swiper>
 		<div class="bottom">
 			<router-link to="/login"><p>登录</p></router-link>
@@ -63,7 +69,9 @@
         			grabCursor: true,
           			setWrapperSize: true,
           			autoHeight: true,
+          			initialSlide: 1,
           			onSlideChangeEnd: function(swiper){
+          				console.log(swiper);
 				      	this.message = !this.message //切换结束时，告诉我现在是第几个slide
 				    },
 				    onTransitionEnd (swiper) {
@@ -82,7 +90,10 @@
 			var that = this;
 			// 然后你就可以使用当前上下文内的swiper对象去做你想做的事了
       		/*console.log('this is current swiper instance object', this.swiper)
-      		this.swiper.slideTo(3, 1000, false)*/
+      		this.swiper.slideTo(3, 1000, false)
+      		setTimeout(function(){
+      			that.message = !that.message;
+      		}, 1000)*/
 			var _vt = localStorage.getItem("_vt");
 			if (_vt) {
 				location.hash = "vipiao";
