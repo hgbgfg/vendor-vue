@@ -5,7 +5,7 @@
 			个人设置
 		</p>
 		<ul>
-			<li>
+			<li class="headerImg">
 				头像
 				<img src="../assets/image/ic_arrow_right@2x.png">
 				<span></span>
@@ -15,19 +15,19 @@
 				<img src="../assets/image/ic_arrow_right@2x.png">
 				<span></span>
 			</li>
-			<li>
+			<router-link to="/authentication"><li>
 				身份认证
 				<img src="../assets/image/ic_arrow_right@2x.png">
 				<span></span>
-			</li>
+			</li></router-link>
 			<li>
 				手机号
 				<span></span>
 			</li>
-			<li>
+			<router-link to="/aboutUs"><li>
 				关于我们
-			</li>
-			<li @click="logout">
+			</li></router-link>
+			<li @click="logout" class="logout">
 				退出登录
 			</li>
 		</ul>
@@ -59,9 +59,9 @@
 	.personalInfo ul li span{
 		font-size: 0.3rem; color: #7d7d7d; float: right;
 	}
-	.personalInfo ul li:first-of-type { height: 1.34rem; line-height: 1.34rem; }
-	.personalInfo ul li:first-of-type img { margin-top: 0.6rem; }
-	.personalInfo ul li:first-of-type span{
+	.personalInfo ul li.headerImg { height: 1.34rem; line-height: 1.34rem; }
+	.personalInfo ul li.headerImg img { margin-top: 0.6rem; }
+	.personalInfo ul li.headerImg span{
 		display: inline-block; width: 1.2rem; height: 1.2rem; border-radius: 50%; padding: 0.08rem;
 		border: solid 0.01rem #ddd;
 	}
@@ -71,7 +71,7 @@
 	.personalInfo ul li:nth-of-type(5){
 		margin-top: 0.32rem; border-top: solid 0.01rem #ddd;
 	}
-	.personalInfo ul li:last-of-type{
+	.personalInfo ul li.logout{
 		text-align: center; color: #FF5D6C; margin-top: 0.32rem; border-top: solid 0.01rem #ddd;
 	}
 	.personalInfo .layer{

@@ -1,19 +1,20 @@
 <template>
 	<div class="loginRegister">
 		<img src="../assets/image/pic_splash_logo@2x.png" class="top">
-		<div class="middle swiper-container">
-			<div class="swiper-wrapper">
-				<div class="swiper-slide">					
-					<img src="../assets/image/pic_splash01@2x.png">
-					<p>「抢单接单功能」</p>
-				</div>
-				<div class="swiper-slide">					
-					<img src="../assets/image/pic_splash02@2x.png">
-					<p>「新上线，召集新卖家」</p>
-				</div>
+		<swiper class="middle" :option="swiperOption" :not-next-tick="notNextTick" ref="mySwiper">
+			<swiper-slide>
+				<img src="../assets/image/pic_splash01@2x.png">
+				<p>「抢单接单功能」</p>
+			</swiper-slide>
+			<swiper-slide>
+				<img src="../assets/image/pic_splash02@2x.png">
+				<p>「新上线，召集新卖家」</p>
+			</swiper-slide>
+			<div class="swiper-pagination" slot="pagination">
+				<span v-bind:class="{'swiper-pagination-bullet':true, 'swiper-pagination-bullet-active' : message}"></span>
+				<span v-bind:class="{'swiper-pagination-bullet':true, 'swiper-pagination-bullet-active' : !message}"></span>
 			</div>
-			<div class="swiper-pagination"></div>		
-		</div>
+		</swiper>
 		<div class="bottom">
 			<router-link to="/login"><p>登录</p></router-link>
 			<router-link to="/register"><p>注册账号</p></router-link>
@@ -21,8 +22,8 @@
 	</div>
 </template>
 
-<style type="text/css" scoped="">
-	@import url("../../node_modules/swiper/dist/css/swiper.min.css");
+<style type="text/css">
+	/*@import url("../../node_modules/vue-awesome-swiper/node_modules/swiper/dist/css/swiper.min.css");*/
 	.loginRegister{ font-size: 0.32rem; height: 11.16rem; background: #fff; }
 	.loginRegister .top{ width: 3.2rem; margin-top: 1rem; margin-left: 2.16rem; }
 	.loginRegister .middle img{ width: 4.8rem; margin-top: 0.6rem; margin-left: 1.36rem; }
@@ -30,34 +31,65 @@
 	.loginRegister .bottom a:first-of-type p{ 
 		height: 1rem; width: 6.7rem; border-radius: 2rem; margin-left: 0.4rem;
 		background: #fceb6c; line-height: 1rem; text-align: center;
-		font-size: 0.34rem; color: #111; margin-top: 1rem;
+		font-size: 0.34rem; color: #111; margin-top: 0.4rem;
 	}
 	.loginRegister .bottom a:last-of-type p{ text-align: center; font-size: 0.3rem; color: #7d7d7d; margin-top: 0.4rem; }
+	.loginRegister .swiper-container{ padding-bottom: 0.6rem; }
+	.loginRegister .swiper-pagination {width: 100%; height: 0.4rem;margin-top: 0.2rem;}
+	.loginRegister .swiper-pagination .swiper-pagination-bullet-active{ width: 0.44rem;border-radius: 30%;background: rgba(0,0,0,0.2); }
 </style>
 
 <script type="text/javascript">
 	import $ from "jquery"
-	import Swiper from "swiper"
+	import { swiper, swiperSlide } from "vue-awesome-swiper"
+	require('swiper/dist/css/swiper.css')
 	export default{
 		name: "loginRegister",
+		components: {
+			swiper,
+			swiperSlide
+		},
 		data(){
 			return {
-				message: "hello world"
+				message: true,
+        		// notNextTick是一个组件自有属性，如果notNextTick设置为true，组件则不会通过NextTick来实例化swiper，也就意味着你可以在第一时间获取到swiper对象，假如你需要刚加载遍使用获取swiper对象来做什么事，那么这个属性一定要是true
+        		notNextTick: true,
+        		swiperOption: {
+        			direction: 'horizontal',
+        			pagination: '.swiper-pagination',
+        			paginationElement : 'li',
+          			paginationType : 'bullets',
+        			paginationClickable: true,
+        			grabCursor: true,
+          			setWrapperSize: true,
+          			autoHeight: true,
+          			onSlideChangeEnd: function(swiper){
+				      	this.message = !this.message //切换结束时，告诉我现在是第几个slide
+				    },
+				    onTransitionEnd (swiper) {
+				    	this.message = !this.message
+			            console.log(swiper)
+			        }
+        		}
 			};
 		},
+		computed: {
+      		swiper() {
+        		return this.$refs.mySwiper.swiper
+      		}
+    	},
 		mounted(){
-			this.$nextTick(function(){				
-				var swiper = new Swiper(".swiper-container", {
-					pagination: '.swiper-pagination'
-				});
-			})
+			var that = this;
+			// 然后你就可以使用当前上下文内的swiper对象去做你想做的事了
+      		/*console.log('this is current swiper instance object', this.swiper)
+      		this.swiper.slideTo(3, 1000, false)*/
 			var _vt = localStorage.getItem("_vt");
 			if (_vt) {
 				location.hash = "vipiao";
 			}
 		},
-		mothods: {
+		methods: {
 
-		}
+		},
 	}
 </script>
