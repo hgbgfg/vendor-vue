@@ -6,6 +6,7 @@ import register from '@/components/register'
 import forgotPassword from '@/components/forgotPassword'
 import setPassword from '@/components/setPassword'
 import personalInfo from '@/components/personalInfo'
+import changeNick from '@/components/changeNick'
 import authenticationInit from '@/components/authenticationInit'
 import authentication from '@/components/authentication'
 import aboutUs from '@/components/aboutUs'
@@ -63,6 +64,11 @@ export default new Router({
         path: '/personalInfo',
         name: 'personalInfo',
         component: personalInfo
+    },
+    {
+        path: '/changeNick',
+        name: 'changeNick',
+        component: changeNick
     },
     {
         path: '/authenticationInit',

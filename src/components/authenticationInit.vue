@@ -134,8 +134,7 @@
 			};
 			this.$http.post("/api/v3/user/user-data", data, { emulateJSON:true }).then(function(res){
 				if (res.body.status_code==200) {
-					$(".third span").text(res.body.data.user.real_name);
-					$(".four span").text(res.body.data.user.id_card);
+					console.log(res.body.data);
 				}
 			}, function(error){
 				console.log(error);

@@ -5,16 +5,17 @@
 			个人设置
 		</p>
 		<ul>
-			<li class="headerImg">
+			<li class="headerImg" @click="editHeader">
 				头像
 				<img src="../assets/image/ic_arrow_right@2x.png">
-				<span></span>
+				<span><img v-bind:src='headerImg' style='width: 1.2rem; border-radius:50%;margin-top: 0;' /></span>
+				<input type="file" name="imgUpload" id="imgUpload" style="position: absolute;top: 1.2rem;right: 0.75rem;z-index: 2;width: 1.4rem;height: 1.4rem;font-size: 0;border: none;margin-left: 0;" ref="headerImg"> 
 			</li>
-			<li>
+			<router-link to="/changeNick"><li class="nickName">
 				昵称
 				<img src="../assets/image/ic_arrow_right@2x.png">
-				<span></span>
-			</li>
+				<span>{{nickName}}</span>
+			</li></router-link>
 			<li v-if=" isAuthentication != 0 ">
 				<router-link to="/authentication">
 					身份认证
@@ -31,7 +32,7 @@
 			</li>
 			<li>
 				手机号
-				<span></span>
+				<span>{{mobile}}</span>
 			</li>
 			<router-link to="/aboutUs"><li>
 				关于我们
@@ -84,8 +85,8 @@
 		display: inline-block; width: 1.2rem; height: 1.2rem; border-radius: 50%; padding: 0.08rem;
 		border: solid 0.01rem #ddd;
 	}
-	.personalInfo ul li:nth-of-type(3){
-		margin-top: 0.32rem; border-top: solid 0.01rem #ddd;
+	.personalInfo ul li.nickName{
+		margin-bottom: 0.32rem; border-bottom: solid 0.01rem #ddd;
 	}
 	.personalInfo ul li:nth-of-type(5){
 		margin-top: 0.32rem; border-top: solid 0.01rem #ddd;
@@ -124,37 +125,46 @@
 				show: false,
 				isAuthentication: '',
 				authenticationContent: '',
-				authenticationLayer: false
+				authenticationLayer: false,
+				headerImg: '',
+				nickName: '',
+				mobile: ''
 			};
 		},
 		mounted() {
-			var that = this;
-			var data = {
-				_vt: localStorage.getItem("_vt")
-			};
-			this.$http.post("/api/v3/user/user-data",data,{emulateJSON:true}).then(function(res){
-				if (res.body.status_code==200) {
-					that.isAuthentication = res.body.data.user.is_wallet;
-					$(".personalInfo ul li:eq(0) span").html("<img src='"+res.body.data.user.header+"' style='width: 1.2rem; border-radius:50%;' />");
-					$(".personalInfo ul li:eq(1) span").html(res.body.data.user.nick_name);
-					if (res.body.data.user.is_wallet==1) {
-						that.authenticationContent = "已认证"
-					}else if (res.body.data.user.is_wallet==2) {
-						that.authenticationContent = "未通过"
-					}else if (res.body.data.user.is_wallet==3) {
-						that.authenticationContent = "审核中"
-					}else{
-						that.authenticationContent = "未认证"
-					}
-					$(".personalInfo ul li:eq(3) span").html(res.body.data.user.mobile);
-				}else{
-					alert(res.body.message);
-				}
-			}, function(error){
-				console.log(error);
-			})
+			this.getUserInfo();
 		},
 		methods: {
+			getUserInfo: function(){
+				var that = this;
+				var data = {
+					_vt: localStorage.getItem("_vt")
+				};
+				this.$http.post("/api/v3/user/user-data",data,{emulateJSON:true}).then(function(res){
+					if (res.body.status_code==200) {
+						localStorage.setItem("userid", res.body.data.user.id);
+
+						that.isAuthentication = res.body.data.user.is_wallet;
+						that.headerImg = res.body.data.user.header;
+						that.nickName = res.body.data.user.nick_name;
+						that.mobile = res.body.data.user.mobile;
+
+						if (res.body.data.user.is_wallet==1) {
+							that.authenticationContent = "已认证"
+						}else if (res.body.data.user.is_wallet==2) {
+							that.authenticationContent = "未通过"
+						}else if (res.body.data.user.is_wallet==3) {
+							that.authenticationContent = "审核中"
+						}else{
+							that.authenticationContent = "未认证"
+						}
+					}else{
+						alert(res.body.message);
+					}
+				}, function(error){
+					console.log(error);
+				})
+			},
 			logout: function(){
 				this.show = true;
 			},
@@ -169,6 +179,39 @@
 			},
 			toAuthentication: function(){
 				this.authenticationLayer = true;
+			},
+			editHeader: function(){
+				var that = this;
+				$("#imgUpload").change(function(e) {
+					/*console.log(e.target.files);
+					that.headerImg = e.target.files[0].name;
+					that.upLoadHeaderImg();*/
+			        for (var i = 0; i < e.target.files.length; i++) {
+			            var file = e.target.files.item(i);            
+			            var freader = new FileReader();  
+			            freader.readAsDataURL(file);
+			            freader.onload = function(e) {
+			              that.headerImg = e.target.result;
+			              that.upLoadHeaderImg();
+			          	}  
+		            }  
+		        });  
+			},
+			upLoadHeaderImg: function(){
+				var that = this;
+				var data = {
+                    _vt: localStorage.getItem("_vt"), //string 否 用户id
+                    upfile: that.headerImg //用户的上传图片地址
+                };
+				this.$http.post("/api/v3/user/header",data,{emulateJSON:true}).then(function(res){
+					if (res.body.status_code==200) {
+						
+					}else{
+						alert(res.body.message);
+					}
+				}, function(error){
+					console.log(error);
+				})
 			}
 		},
 		watch: {

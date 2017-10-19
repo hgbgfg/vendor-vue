@@ -7,10 +7,12 @@ import Vuex from 'vuex'
 import store from './vuex/store'
 import util from '../static/js/util'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
+import axios from 'axios'
 
 Vue.config.productionTip = false
 
 Vue.prototype.$util = util
+Vue.prototype.$ajax = axios
 
 Vue.use(VueAwesomeSwiper)
 
