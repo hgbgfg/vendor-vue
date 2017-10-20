@@ -8,8 +8,8 @@
 			<li class="headerImg" @click="editHeader">
 				头像
 				<img src="../assets/image/ic_arrow_right@2x.png">
-				<span><img v-bind:src='headerImg' style='width: 1.2rem; border-radius:50%;margin-top: 0;' /></span>
-				<input type="file" name="imgUpload" id="imgUpload" style="position: absolute;top: 1.2rem;right: 0.75rem;z-index: 2;width: 1.4rem;height: 1.4rem;font-size: 0;border: none;margin-left: 0;" ref="headerImg"> 
+				<span><img v-bind:src='headerImg' style='width: 1.2rem;height: 1.2rem; border-radius:50%;margin-top: 0;' /></span>
+				<input type="file" name="imgUpload" id="imgUpload" style="position: absolute;top: 0.5rem;right: 0.75rem;z-index: 2;width: 1.4rem;height: 2.4rem;font-size: 0;border: none;margin-left: 0;" ref="headerImg"> 
 			</li>
 			<router-link to="/changeNick"><li class="nickName">
 				昵称
@@ -67,6 +67,7 @@
 	.personalInfo .topTitle{
 	  font-size: 0.34rem;line-height: 0.92rem;border-bottom: solid 0.01rem #ddd;
 	  text-align: center;position: relative;background: #fff;color: #111;
+	  position: relative;top: 0;left: 0;z-index: 5;
 	}
 	.personalInfo .topTitle img{width: 0.32rem;position: absolute;top: 0.3rem;left: 0.3rem;}
 	.personalInfo ul li{ 
@@ -82,8 +83,8 @@
 	.personalInfo ul li.headerImg { height: 1.34rem; line-height: 1.34rem; }
 	.personalInfo ul li.headerImg img { margin-top: 0.6rem; }
 	.personalInfo ul li.headerImg span{
-		display: inline-block; width: 1.2rem; height: 1.2rem; border-radius: 50%; padding: 0.08rem;
-		border: solid 0.01rem #ddd;
+		display: inline-block; width: 1.2rem; height: 1.2rem; border-radius: 50%;
+		padding: 0.08rem;border: solid 0.01rem #ddd;
 	}
 	.personalInfo ul li.nickName{
 		margin-bottom: 0.32rem; border-bottom: solid 0.01rem #ddd;
@@ -128,7 +129,9 @@
 				authenticationLayer: false,
 				headerImg: '',
 				nickName: '',
-				mobile: ''
+				mobile: '',
+				formData: '',
+				upfile: ''
 			};
 		},
 		mounted() {
@@ -183,15 +186,13 @@
 			editHeader: function(){
 				var that = this;
 				$("#imgUpload").change(function(e) {
-					/*console.log(e.target.files);
-					that.headerImg = e.target.files[0].name;
-					that.upLoadHeaderImg();*/
 			        for (var i = 0; i < e.target.files.length; i++) {
 			            var file = e.target.files.item(i);            
 			            var freader = new FileReader();  
 			            freader.readAsDataURL(file);
 			            freader.onload = function(e) {
 			              that.headerImg = e.target.result;
+			              that.upfile = that.getBlobBydataURI(e.target.result, "image/png");
 			              that.upLoadHeaderImg();
 			          	}  
 		            }  
@@ -203,7 +204,10 @@
                     _vt: localStorage.getItem("_vt"), //string 否 用户id
                     upfile: that.headerImg //用户的上传图片地址
                 };
-				this.$http.post("/api/v3/user/header",data,{emulateJSON:true}).then(function(res){
+                that.formData = new FormData();
+                that.formData.append("_vt", localStorage.getItem("_vt"));
+                that.formData.append("upfile", that.upfile, "files_"+Date.parse(new Date())+".png");
+				this.$http.post("/api/v3/user/header",that.formData,{emulateJSON:true}).then(function(res){
 					if (res.body.status_code==200) {
 						
 					}else{
@@ -212,7 +216,15 @@
 				}, function(error){
 					console.log(error);
 				})
-			}
+			},
+			getBlobBydataURI: function (dataURI,type) { 
+		      	var binary = atob(dataURI.split(',')[1]); 
+		      	var array = []; 
+		      	for(var i = 0; i < binary.length; i++) { 
+		        	array.push(binary.charCodeAt(i)); 
+		      	} 
+		      	return new Blob([new Uint8Array(array)], {type:type }); 
+		    } 
 		},
 		watch: {
 

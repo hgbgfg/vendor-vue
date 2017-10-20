@@ -45,9 +45,7 @@
 					nick_name: $(".nickName input").val()
 				};
 				that.$http.post("/api/v3/user/update-user-data", data, {emulateJSON: true}).then(function(res){
-					console.log(res);
 					if (res.body.status_code==200) {
-						alert("修改成功");
 						location.hash = "personalInfo";
 					}else{
 						alert(res.body.message);
