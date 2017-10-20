@@ -34,6 +34,10 @@
 			
 		},
 		mounted(){// 二级路由默认值时显示的状态
+			if (!localStorage.getItem("_vt")) {
+				location.hash = "/";
+				return;
+			}
 			if (location.href.indexOf("changeDetail_income")==-1 && location.href.indexOf("changeDetail_draw")==-1 && location.href.indexOf("changeDetail_deposit")==-1) {
 				this.selectedIncome = true;
 			}

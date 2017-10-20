@@ -135,6 +135,10 @@
 			};
 		},
 		mounted() {
+			if (!localStorage.getItem("_vt")) {
+				location.hash = "/";
+				return;
+			}
 			this.getUserInfo();
 		},
 		methods: {
@@ -200,10 +204,6 @@
 			},
 			upLoadHeaderImg: function(){
 				var that = this;
-				var data = {
-                    _vt: localStorage.getItem("_vt"), //string 否 用户id
-                    upfile: that.headerImg //用户的上传图片地址
-                };
                 that.formData = new FormData();
                 that.formData.append("_vt", localStorage.getItem("_vt"));
                 that.formData.append("upfile", that.upfile, "files_"+Date.parse(new Date())+".png");

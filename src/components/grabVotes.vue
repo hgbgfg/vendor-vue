@@ -153,6 +153,10 @@
 			},
 		},
 		mounted(){
+			if (!localStorage.getItem("_vt")) {
+				location.hash = "/";
+				return;
+			}
 			$(".grabVote")[0].addEventListener("scroll", this.scrollUpdata);
 			this.$store.state.fromPage = "grabVotes";
 		}

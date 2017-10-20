@@ -55,7 +55,10 @@
 			};
 		},
 		mounted () {
-
+			if (!localStorage.getItem("_vt")) {
+				location.hash = "/";
+				return;
+			}
 		},
 		methods: {
 			back: function(){

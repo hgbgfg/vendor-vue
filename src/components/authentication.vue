@@ -106,6 +106,10 @@
 			};
 		},
 		mounted () {
+			if (!localStorage.getItem("_vt")) {
+				location.hash = "/";
+				return;
+			}
 			var data = {
 				_vt: localStorage.getItem("_vt")
 			};

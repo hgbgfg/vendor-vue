@@ -54,6 +54,10 @@
 			
 		},
 		mounted: function(){
+			if (!localStorage.getItem("_vt")) {
+				location.hash = "/";
+				return;
+			}
 			localStorage.setItem("selectedIncome", true);
 			localStorage.setItem("selectedDraw", false);
 			localStorage.setItem("selectedDeposit", false);

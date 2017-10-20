@@ -97,7 +97,11 @@
 			}
 		},
 		mounted: function(){
-			this.$http.get("/api/v5/wallet/wallet-list?_vt=eyJpdiI6IjNVa2pHK1ZiTHYwZzZ5SkFaZ09iZVE9PSIsInZhbHVlIjoiTWNuaTZMWVlIOVwvOXZ4NUdtb0M4dzJcLzFLeTVQakNYY1NEQTBheVI0RWRVaW1MSENldkJOYkR4RE4rT1k0dFNTNzFDc3hHRU1ZMmpNdTVLNjNZU1ZwOVwvelBKZDFkUjRhNmxXV1A2K1c5SjlZcUlDb0U5Z3NSbVwvNmtFdDZmUWVBejRKRDBBT0VXOWY3WU10ZzV6TzZITnNaRHp0MUVETlhwSEtlOUVFSVN5ST0iLCJtYWMiOiIzYjBkMzlhMWQ3ZjEwZWNhZTU0ODg1YmZkOGYyZDkxN2UwM2U1ODI3MGEyY2ZlODM0YWMxMDFjMTJlMThlYTg4In0%3D&page=1&page_size=10").then(function(res){
+			if (!localStorage.getItem("_vt")) {
+				location.hash = "/";
+				return;
+			}
+			this.$http.get("/api/v5/wallet/wallet-list?_vt="+localStorage.getIntem("_vt")).then(function(res){
 				
 			},function(res){
 				console.log("请求失败");
