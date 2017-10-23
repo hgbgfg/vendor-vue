@@ -42,7 +42,7 @@ a{
 .content p:nth-of-type(3) span{
 	font-size: 0.36rem;
 }
-.content p:nth-of-type(4){
+.content div p{
 	width: 6.3rem;
 	height: 1rem;
 	line-height: 1rem;

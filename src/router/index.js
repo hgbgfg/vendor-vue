@@ -16,6 +16,7 @@ import noticeInfo from '@/components/noticeInfo'
 import myWallet from '@/components/myWallet'
 import notice from '@/components/notice'
 import withDraw from '@/components/withDraw'
+import withDrawNext from '@/components/withDrawNext'
 import withdrawRule from '@/components/withdrawRule'
 import changeDetail from '@/components/changeDetail'
 import changeDetail_income from '@/components/changeDetail_income'
@@ -109,6 +110,11 @@ export default new Router({
         path: '/withDraw',
         name: 'withDraw',
         component: withDraw
+    },
+    {
+        path: '/withDrawNext',
+        name: 'withDrawNext',
+        component: withDrawNext
     },
     {
         path: '/withdrawRule',

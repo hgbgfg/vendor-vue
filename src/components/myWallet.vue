@@ -31,7 +31,7 @@
 				<router-link to="/bindCard">
 					我的银行卡
 					<img src="../assets/image/ic_nav_nextarrow@2x.png">
-					<span>未绑定</span>
+					<span>{{isBind}}</span>
 				</router-link>
 			</p>
 		</div>
@@ -47,7 +47,7 @@
 		name: 'myWallet',
 		data(){
 			return {
-
+				isBind: '未绑定'
 			}
 		},
 		components: {
@@ -61,9 +61,26 @@
 			localStorage.setItem("selectedIncome", true);
 			localStorage.setItem("selectedDraw", false);
 			localStorage.setItem("selectedDeposit", false);
+
+			this.getUserData();
 		},
 		methods: {
-
+			getUserData: function(){
+				var data = {
+					_vt: localStorage.getItem("_vt")
+				};
+				this.$http.post("/api/v3/user/user-data", data, { emulateJSON: true })
+				.then(function(res){
+					console.log(res);
+					if (res.body.status_code==200) {
+						if (res.body.data.user) {}
+					}else{
+						alert(res.body.message);
+					}
+				}, function(error){
+					console.log(error);
+				})
+			}
 		}
 	}
 </script>

@@ -151,6 +151,8 @@
 	justify-content: space-around;
 	box-sizing: border-box;
 	margin-bottom: 0.2rem;
+	position: relative;
+	z-index: 2;
 }
 .distribution .venderAddress .left{
 	line-height: 1rem;
@@ -176,20 +178,31 @@
 	border-bottom: solid 0.01rem #ddd;
 }
 .distribution .logisticsInfo li input{
-	margin-left: 0.5rem;
-	font-size: 0.28rem;
+	margin-left: 0.5rem;font-size: 0.28rem;
+	padding: 0.15rem 0;box-sizing: border-box;
 }
 .distribution .logisticsInfo li:first-of-type img{
 	float: right;
 	width: 0.4rem;
 	margin-top: 0.2rem;
 }
+.distribution .logisticsInfo li:first-of-type{
+	position: relative;z-index: 2;
+}
+.distribution .logisticsInfo li:nth-of-type(2){
+	position: relative;z-index: 2;
+}
 .distribution .logisticsInfo li:last-of-type{
-	border-bottom: none;
+	border-bottom: none;height: 2.8rem;display: flex;position: relative;;
 }
 .distribution .logisticsInfo li:last-of-type input{
-	width: 4.18rem;
+	position: absolute;top: -3.02rem;left: 1.2rem;width: 4.18rem;height: 5.44rem;
+	z-index: 1;font-size: 0;
 }
+.distribution .logisticsInfo li:last-of-type p:last-of-type{
+	width: 4.18rem;height: 2.14rem;margin-top: 0.34rem;margin-left: 0.5rem;
+}
+.distribution .logisticsInfo li:last-of-type p:last-of-type img{ width: 4.18rem;height: 2.14rem; }
 .distribution .confirmBtn{
 	width: 6.64rem;
 	height: 1rem;

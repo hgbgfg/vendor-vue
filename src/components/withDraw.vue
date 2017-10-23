@@ -6,7 +6,12 @@
 			<p><img src="../assets/image/ic_personal_icon_purse_nor@2x.png"></p>
 			<p>可提现金额</p>
 			<p>￥<span>87692.00</span></p>
-			<p v-on:click="withdraw">提现</p>
+			<div v-if="canWithDraw">
+				<router-link to="/withDrawNext"><p>提现</p></router-link>
+			</div>
+			<div v-else>
+				<p v-on:click="withdraw">提现</p>
+			</div>
 			<router-link to="/withdrawRule">《提现规则说明》</router-link>
 		</div>
 
@@ -32,7 +37,8 @@
 		data(){
 			return {
 				showMask: false,
-				showNoOpenedToast: false
+				showNoOpenedToast: false,
+				canWithDraw: false
 			}
 		},
 		components: {

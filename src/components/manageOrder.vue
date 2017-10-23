@@ -41,7 +41,7 @@
 				</div>
 				<div class="bottom">
 					<p>合计：<span>￥</span><span>900</span></p>
-					<p><span>取消订单</span><span><router-link to="/distribution">确认发货</router-link></span></p>
+					<p><span @click="cancleOrder">取消订单</span><span><router-link to="/distribution">确认发货</router-link></span></p>
 				</div>
 			</li>
 			<li>
@@ -64,7 +64,7 @@
 				</div>
 				<div class="bottom">
 					<p>合计：<span>￥</span><span>900</span></p>
-					<p><span>取消订单</span><span><router-link to="/distribution">确认发货</router-link></span></p>
+					<p><span @click="cancleOrder">取消订单</span><span><router-link to="/distribution">确认发货</router-link></span></p>
 				</div>
 			</li>
 		</ul>
@@ -101,6 +101,9 @@
 			closeVenderAddress: function(){
 				$(".manageOrder .venderAddress").hide();
 				$(".manageOrder .orderList").css("margin-top", "1.84rem");
+			},
+			cancleOrder: function(){
+				location.hash = "manageOrder/3";
 			}
 		}
 	}

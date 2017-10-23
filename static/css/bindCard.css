@@ -51,8 +51,8 @@
 	width: 6.3rem;
 	height: 1rem;
 	line-height: 1rem;
-	background: linear-gradient(#fce86c,#ffe64b);
-	box-shadow: 0 0.02rem 0.08rem 0 #000;
+	background: linear-gradient(-105deg, #fce86c 2%,#ffe64b 100%);
+	box-shadow: 0 0.02rem 0.08rem 0 rgba(0,0,0,0.1);
 	border-radius: 2rem;
 	text-align: center;
 	margin: 0.72rem 0 1.34rem 0.3rem;
