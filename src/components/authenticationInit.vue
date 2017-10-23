@@ -64,52 +64,69 @@
 	</div>
 </template>
 
-<style type="text/css" scoped="">
-	.authenticationInit{ font-size: 0.32rem; color: #111;background: #fff;padding-bottom: 0.32rem; }
-	.authenticationInit .topTitle{
-	  font-size: 0.34rem;line-height: 0.92rem;border-bottom: solid 0.01rem #ddd;
-	  text-align: center;position: relative;background: #fff;color: #111;
+<style type="text/css" scoped="" lang="less">
+	.authenticationInit{ 
+		font-size: 0.32rem; color: #111;background: #fff;padding-bottom: 0.32rem; 
+		.topTitle{
+		    font-size: 0.34rem;line-height: 0.92rem;border-bottom: solid 0.01rem #ddd;
+		    text-align: center;position: relative;background: #fff;color: #111;
+			img{width: 0.32rem;position: absolute;top: 0.3rem;left: 0.3rem;}
+			a{ float: right; margin-right: 0.3rem; }
+		}
+		.content{ 
+			p { font-size: 0.24rem; color:  #FFA428; padding: 0.12rem 0.3rem 0.14rem; background: #fffdf2; border-bottom: solid 0.01rem #ddd; }
+		}
+		ul{ 
+			position: relative; 
+			li{ 
+				border-bottom: solid 0.01rem #ddd; padding: 0.3rem; background: #fff;
+				img{
+					width: 0.28rem; margin-left: 0.2rem; vertical-align: middle; float: right; 
+				}
+				input{
+					font-size: 0.3rem; margin-left: 0.4rem;text-align: right;
+					width: 5rem;border: none;
+				}
+				&.second{ font-size: 0.24rem;color: #aaa;background: #f5f5f5;}
+				ul {
+					li {
+						&:first-of-type{
+							width: 3.6rem;margin: 0.3rem 0.6rem 0.3rem 0;
+							border-bottom: none;height: 2.24rem;padding: 0;
+						}
+						&:last-of-type{
+							padding: 0; line-height: 3rem; border-bottom: none;
+							font-size: 0.24rem;color: #aaa;
+						}
+						&:last-of-type {
+							img{width: 1.6rem; margin-top: 1rem;}
+						}
+					}
+				}
+			}
+		}
+		.submit{ 
+			width: 6.7rem;height: 1rem;line-height: 1rem;margin-left: 0.4rem; 
+			text-align: center;color: #fff;background: #ddd;border-radius: 2rem;
+		}
+		.actived{ color: #111; background: linear-gradient(-105deg, #FCE86C 2%, #FFE64B 100%) }
+		/*成功弹框样式*/
+		.successLayer{ 
+			position: fixed;top: 30%;z-index: 10;background: #fff;width: 5.9rem;
+			margin-left: 0.8rem;border-radius: 0.24rem;padding: 0.4rem;
+			box-sizing: border-box;text-align: center; 
+			p {
+				&:first-of-type{ font-size: 0.36rem;margin: 0.3rem 0; }
+				&:first-of-type img{ width: 0.48rem;vertical-align: middle; }
+				&:nth-of-type(2){ font-size: 0.24rem;color: #9d9d9d;
+					line-height: 0.34rem;padding: 0 0.6rem; }
+			}
+			a { 
+				p{ width: 5.1rem;height: 1rem;line-height: 1rem;background: #fce86c;border-radius: 2rem;margin-top: 0.4rem;margin-bottom: 0.2rem;box-shadow: 0 0.02rem 0.08rem 0 rgba(0,0,0,0.1); }
+			}
+			.mask{ position: fixed;top: 0;left: 0;background: rgba(0,0,0,0.6);z-index: 9;width: 100%;height: 100%; }
+		}
 	}
-	.authenticationInit .topTitle img{width: 0.32rem;position: absolute;top: 0.3rem;left: 0.3rem;}
-	.authenticationInit .topTitle a{ float: right; margin-right: 0.3rem; }
-	.authenticationInit .content>p{ font-size: 0.24rem; color:  #FFA428; padding: 0.12rem 0.3rem 0.14rem; background: #fffdf2; border-bottom: solid 0.01rem #ddd; }
-	.authenticationInit ul{ position: relative; }
-	.authenticationInit ul li{ 
-		border-bottom: solid 0.01rem #ddd; padding: 0.3rem; background: #fff;
-	}
-	.authenticationInit ul li img{
-		width: 0.28rem; margin-left: 0.2rem; vertical-align: middle; float: right; 
-	}
-	.authenticationInit ul li input{
-		font-size: 0.3rem; margin-left: 0.4rem;text-align: right;width: 5rem;
-		border: none;
-	}
-	.authenticationInit ul li.second{ font-size: 0.24rem;color: #aaa;
-		background: #f5f5f5; 
-	}
-	.authenticationInit ul li ul li:first-of-type{
-		width: 3.6rem;margin: 0.3rem 0.6rem 0.3rem 0;border-bottom: none;
-		height: 2.24rem;padding: 0;
-	}
-	.authenticationInit ul li ul li:last-of-type{
-		padding: 0; line-height: 3rem; border-bottom: none;font-size: 0.24rem;
-		color: #aaa;
-	}
-	.authenticationInit ul li ul li:last-of-type img{
-		width: 1.6rem; margin-top: 1rem;
-	}
-	.authenticationInit .submit{ 
-		width: 6.7rem;height: 1rem;line-height: 1rem;margin-left: 0.4rem; 
-		text-align: center;color: #fff;background: #ddd;border-radius: 2rem;
-	}
-	.authenticationInit .actived{ color: #111; background: linear-gradient(-105deg, #FCE86C 2%, #FFE64B 100%) }
-	/*成功弹框样式*/
-	.authenticationInit .successLayer{ position: fixed;top: 30%;z-index: 10;background: #fff;width: 5.9rem;margin-left: 0.8rem;border-radius: 0.24rem;padding: 0.4rem;box-sizing: border-box;text-align: center; }
-	.authenticationInit .successLayer p:first-of-type{ font-size: 0.36rem;margin: 0.3rem 0; }
-	.authenticationInit .successLayer p:first-of-type img{ width: 0.48rem;vertical-align: middle; }
-	.authenticationInit .successLayer p:nth-of-type(2){ font-size: 0.24rem;color: #9d9d9d;line-height: 0.34rem;padding: 0 0.6rem; }
-	.authenticationInit .successLayer a p{ width: 5.1rem;height: 1rem;line-height: 1rem;background: #fce86c;border-radius: 2rem;margin-top: 0.4rem;margin-bottom: 0.2rem;box-shadow: 0 0.02rem 0.08rem 0 rgba(0,0,0,0.1); }
-	.authenticationInit .mask{ position: fixed;top: 0;left: 0;background: rgba(0,0,0,0.6);z-index: 9;width: 100%;height: 100%; }
 </style>
 
 <script type="text/javascript">

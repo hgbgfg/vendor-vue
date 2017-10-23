@@ -21,29 +21,34 @@
 	</div>
 </template>
 
-<style type="text/css" scoped="">
-	.aboutUs{ font-size: 0.32rem; color: #111; }
-	.aboutUs .topTitle{
-	  font-size: 0.34rem;line-height: 0.92rem;border-bottom: solid 0.01rem #ddd;
-	  text-align: center;position: relative;background: #fff;color: #111;
+<style type="text/css" scoped="" lang="less">
+	.aboutUs{ 
+		font-size: 0.32rem; color: #111; 
+
+		.topTitle{
+		    font-size: 0.34rem;line-height: 0.92rem;border-bottom: solid 0.01rem #ddd;
+		    text-align: center;position: relative;background: #fff;color: #111;
+			img{width: 0.32rem;position: absolute;top: 0.3rem;left: 0.3rem;}
+		}
+		ul li{ 
+			border-bottom: solid 0.01rem #ddd; padding: 0.3rem; background: #fff;
+			img{
+				width: 0.28rem; margin-left: 0.2rem; vertical-align: middle; float: right; 
+				margin-top: 0.1rem;
+			}
+			span{
+				font-size: 0.3rem; color: #7d7d7d; float: right;
+			}
+			&.first{ 
+				height: 3rem; 
+				img{ 
+					width: 1.28rem; height: 1.28rem; position: absolute; top: 1.61rem; 
+					left: 2.9rem;
+				}
+				p{ text-align: center; margin-top: 2.04rem; font-size: 0.28rem; color: #7d7d7d; }
+			}
+		}
 	}
-	.aboutUs .topTitle img{width: 0.32rem;position: absolute;top: 0.3rem;left: 0.3rem;}
-	.aboutUs ul li{ 
-		border-bottom: solid 0.01rem #ddd; padding: 0.3rem; background: #fff;
-	}
-	.aboutUs ul li img{
-		width: 0.28rem; margin-left: 0.2rem; vertical-align: middle; float: right; 
-		margin-top: 0.1rem;
-	}
-	.aboutUs ul li span{
-		font-size: 0.3rem; color: #7d7d7d; float: right;
-	}
-	.aboutUs ul li.first{ height: 3rem; }
-	.aboutUs ul li.first img{ 
-		width: 1.28rem; height: 1.28rem; position: absolute; top: 1.61rem; 
-		left: 2.9rem;
-	}
-	.aboutUs ul li.first p{ text-align: center; margin-top: 2.04rem; font-size: 0.28rem; color: #7d7d7d; }
 </style>
 
 <script type="text/javascript">

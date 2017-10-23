@@ -68,32 +68,38 @@
 	</div>
 </template>
 
-<style type="text/css" scoped="">
-	.authentication{ font-size: 0.32rem; color: #111;background: #fff; }
-	.authentication .topTitle{
-	  font-size: 0.34rem;line-height: 0.92rem;border-bottom: solid 0.01rem #ddd;
-	  text-align: center;position: relative;background: #fff;color: #111;
+<style type="text/css" scoped="" lang="less">
+	.authentication{ 
+		font-size: 0.32rem; color: #111;background: #fff; 
+		.topTitle{
+		    font-size: 0.34rem;line-height: 0.92rem;border-bottom: solid 0.01rem #ddd;
+		    text-align: center;position: relative;background: #fff;
+			img{width: 0.32rem;position: absolute;top: 0.3rem;left: 0.3rem;}
+			a{ float: right; margin-right: 0.3rem; }
+		}
+		.content{ 
+			p{ font-size: 0.24rem; color:  #FFA428; padding: 0.12rem 0.3rem 0.14rem; background: #fffdf2; border-bottom: solid 0.01rem #ddd; }
+		}
+		ul{ 
+			position: relative; 
+			li{ 
+				border-bottom: solid 0.01rem #ddd; padding: 0.3rem; background: #fff;
+				img{
+					width: 0.28rem; margin-left: 0.2rem; vertical-align: middle; float: right; 
+				}
+				span{
+					font-size: 0.3rem; color: #4d4d4d; margin-left: 0.4rem;
+				}
+				&.first{ height: 2.5rem;background: url(../assets/image/bg_hom_top@2x.png) 0 0 no-repeat;background-size: 100%; }
+				&.first img{ 
+					width: 1.28rem; height: 1.28rem; position: absolute; left: 2.9rem;
+				}
+				&.first .certified{ text-align: center; margin-top: 1.35rem; font-size: 0.28rem; color: #7d7d7d; }
+				&.first .bindAgain{ text-align: center; margin-top: 0.2rem; font-size: 0.28rem; color: #ff5d6c; border: solid 0.01rem #ff5c6d; width: 1.36rem; border-radius: 2rem;margin-left: 2.8rem;padding: 0.02rem 0.06rem; }
+				&.second{ font-size: 0.24rem;color: #aaa; }
+			}
+		}
 	}
-	.authentication .topTitle img{width: 0.32rem;position: absolute;top: 0.3rem;left: 0.3rem;}
-	.authentication .topTitle a{ float: right; margin-right: 0.3rem; }
-	.authentication .content>p{ font-size: 0.24rem; color:  #FFA428; padding: 0.12rem 0.3rem 0.14rem; background: #fffdf2; border-bottom: solid 0.01rem #ddd; }
-	.authentication ul{ position: relative; }
-	.authentication ul li{ 
-		border-bottom: solid 0.01rem #ddd; padding: 0.3rem; background: #fff;
-	}
-	.authentication ul li img{
-		width: 0.28rem; margin-left: 0.2rem; vertical-align: middle; float: right; 
-	}
-	.authentication ul li span{
-		font-size: 0.3rem; color: #4d4d4d; margin-left: 0.4rem;
-	}
-	.authentication ul li.first{ height: 2.5rem;background: url(../assets/image/bg_hom_top@2x.png) 0 0 no-repeat;background-size: 100%; }
-	.authentication ul li.first img{ 
-		width: 1.28rem; height: 1.28rem; position: absolute; left: 2.9rem;
-	}
-	.authentication ul li.first .certified{ text-align: center; margin-top: 1.35rem; font-size: 0.28rem; color: #7d7d7d; }
-	.authentication ul li.first .bindAgain{ text-align: center; margin-top: 0.2rem; font-size: 0.28rem; color: #ff5d6c; border: solid 0.01rem #ff5c6d; width: 1.36rem; border-radius: 2rem;margin-left: 2.8rem;padding: 0.02rem 0.06rem; }
-	.authentication ul li.second{ font-size: 0.24rem;color: #aaa; }
 </style>
 
 <script type="text/javascript">

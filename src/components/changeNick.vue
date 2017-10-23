@@ -9,16 +9,29 @@
 	</div>
 </template>
 
-<style type="text/css" scoped="">
-	.changeNick{ font-size: 0.32rem; color: #111; }
-	.changeNick .topTitle{
-	  font-size: 0.34rem;line-height: 0.92rem;border-bottom: solid 0.01rem #ddd;
-	  text-align: center;position: relative;background: #fff;color: #111;
+<style type="text/css" scoped="" lang="less">
+	.changeNick{ 
+		@color: #111;
+		@font-size: 0.32rem;
+		@init-blue: #3a9fff;
+		@border-bottom: solid 0.01rem #ddd;
+
+		font-size: @font-size; color: @color; 
+
+		.topTitle {
+			font-size: 0.34rem;line-height: 0.92rem;border-bottom: @border-bottom;
+			text-align: center;position: relative;background: #fff;color: @color;
+
+			a{ color: #4d4d4d;float: left;margin-left: 0.3rem; }
+			span{ color: @init-blue;float: right;margin-right: 0.3rem; 
+				&:after {content: " √ ";font-size: 0.3rem;height: 0.3rem;clear: both;}
+			}
+		}
+		.nickName{ 
+			height: 1rem;line-height: 1rem;background: #fff;margin-top: 0.2rem;padding: 0 0.3rem;border-top: solid 0.01rem #ddd;border-bottom: @border-bottom;
+			input{ font-size: 0.3rem;border: none;text-align: right;margin-left: 0.4rem;width: 5.6rem;padding: 0.3rem 0 0.4rem 0; }
+		}
 	}
-	.changeNick .topTitle a{ color: #4d4d4d;float: left;margin-left: 0.3rem; }
-	.changeNick .topTitle span{ color: #3a9fff;float: right;margin-right: 0.3rem; }
-	.changeNick .nickName{ height: 1rem;line-height: 1rem;background: #fff;margin-top: 0.2rem;padding: 0 0.3rem;border-top: solid 0.01rem #ddd;border-bottom: solid 0.01rem #ddd; }
-	.changeNick .nickName input{ font-size: 0.3rem;border: none;text-align: right;margin-left: 0.4rem;width: 5.6rem;padding: 0.3rem 0 0.4rem 0; }
 </style>
 
 <script type="text/javascript">
