@@ -30,8 +30,8 @@
 
 <style type="text/css">
 	/*@import url("../../node_modules/vue-awesome-swiper/node_modules/swiper/dist/css/swiper.min.css");*/
-	.loginRegister{ font-size: 0.32rem; height: 11.16rem; background: #fff; }
-	.loginRegister .top{ width: 3.2rem; margin-top: 1rem; margin-left: 2.16rem; }
+	.loginRegister{ font-size: 0.32rem; height: 12.06rem; background: #fff; }
+	.loginRegister .top{ width: 3.2rem; margin-top: 0.12rem; margin-left: 2.16rem; }
 	.loginRegister .middle img{ width: 4.8rem; margin-top: 0.6rem; margin-left: 1.36rem; }
 	.loginRegister .middle p{ margin: 0 auto; text-align: center; font-size: 0.48rem; color: #111;}
 	.loginRegister .bottom a:first-of-type p{ 
@@ -40,8 +40,8 @@
 		font-size: 0.34rem; color: #111; margin-top: 0.4rem;
 	}
 	.loginRegister .bottom a:last-of-type p{ text-align: center; font-size: 0.3rem; color: #7d7d7d; margin-top: 0.4rem; }
-	.loginRegister .swiper-container{ padding-bottom: 0.6rem; }
-	.loginRegister .swiper-pagination {width: 100%; height: 0.4rem;margin-top: 0.2rem;}
+	.loginRegister .swiper-container{ padding-bottom: 2.3rem; }
+	.loginRegister .swiper-pagination {width: 100%; height: 0.4rem;margin-top: 1.44rem;}
 	.loginRegister .swiper-pagination .swiper-pagination-bullet-active{ width: 0.44rem;border-radius: 30%;background: rgba(0,0,0,0.2); }
 </style>
 

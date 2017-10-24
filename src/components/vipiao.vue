@@ -1,17 +1,19 @@
 <template>
     <!-- 内容主体区域 -->
     <div class="vipiao">
-      <div class="topNav">
-        <router-link to="/personalInfo"><img src="../assets/image/ic_nav_setting@2x.png" class="setting"></router-link>
-        <span class="title">唯票卖家版</span>
-        <router-link to="/noticeCenter"><img src="../assets/image/ic_nav_notice@2x.png" class="message"></router-link>
-      </div>
-      <div class="userInfo">
-        <span class="userHeader"><img src="../../static/images/header.png"></span>
-        <ul>
-          <li>黄牛不是牛黄牛不是牛</li>
-          <li><img src="../assets/image/ic_hom_certified@2x.png" />认证卖家</li>
-        </ul>
+      <div style="background: #fff;">
+        <div class="topNav">
+          <router-link to="/personalInfo"><img src="../assets/image/ic_nav_setting@2x.png" class="setting"></router-link>
+          <span class="title">唯票卖家版</span>
+          <router-link to="/noticeCenter"><img src="../assets/image/ic_nav_notice@2x.png" class="message"></router-link>
+        </div>
+        <div class="userInfo">
+          <span class="userHeader"><img src="../../static/images/header.png"></span>
+          <ul>
+            <li>黄牛不是牛黄牛不是牛</li>
+            <li><img src="../assets/image/ic_hom_certified@2x.png" />认证卖家</li>
+          </ul>
+        </div>
       </div>
       <ul class="changeInfo">
         <li>

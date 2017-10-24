@@ -8,7 +8,7 @@
 			<li class="headerImg" @click="editHeader">
 				头像
 				<img src="../assets/image/ic_arrow_right@2x.png">
-				<span><img v-bind:src='headerImg' style='width: 1.2rem;height: 1.2rem; border-radius:50%;margin-top: 0;' /></span>
+				<span v-show="headerImg"><img v-bind:src='headerImg' style='width: 1.2rem;height: 1.2rem; border-radius:50%;margin-top: 0;' /></span>
 				<input type="file" name="imgUpload" id="imgUpload" style="position: absolute;top: 0.5rem;right: 0.75rem;z-index: 2;width: 1.4rem;height: 2.4rem;font-size: 0;border: none;margin-left: 0;" ref="headerImg"> 
 			</li>
 			<router-link to="/changeNick"><li class="nickName">
@@ -198,11 +198,11 @@
 			            freader.readAsDataURL(file);
 			            freader.onload = function(e) {
 			              that.headerImg = e.target.result;
-			              that.upfile = that.getBlobBydataURI(e.target.result, "image/png");
+			              that.upfile = that.$util.convertImgDataToBlob(e.target.result);
 			              that.upLoadHeaderImg();
 			          	}  
 		            }  
-		        });  
+		        });
 			},
 			upLoadHeaderImg: function(){
 				var that = this;
@@ -211,22 +211,14 @@
                 that.formData.append("upfile", that.upfile, "files_"+Date.parse(new Date())+".png");
 				this.$http.post("/api/v3/user/header",that.formData,{emulateJSON:true}).then(function(res){
 					if (res.body.status_code==200) {
-						
+			            
 					}else{
 						alert(res.body.message);
 					}
 				}, function(error){
 					console.log(error);
 				})
-			},
-			getBlobBydataURI: function (dataURI,type) { 
-		      	var binary = atob(dataURI.split(',')[1]); 
-		      	var array = []; 
-		      	for(var i = 0; i < binary.length; i++) { 
-		        	array.push(binary.charCodeAt(i)); 
-		      	} 
-		      	return new Blob([new Uint8Array(array)], {type:type }); 
-		    } 
+			}
 		},
 		watch: {
 
