@@ -195,14 +195,28 @@
 .distribution .logisticsInfo li:last-of-type{
 	border-bottom: none;height: 2.8rem;display: flex;position: relative;;
 }
-.distribution .logisticsInfo li:last-of-type input{
+.distribution .avatarWrapper{ 
+	width: 4.18rem;height: 2.14rem;margin-top: 0.34rem;margin-left: 0.5rem; 
+	position: relative;
+}
+.distribution .avatarWrapper #avatorUpload{ 
+	width: 4.18rem;height: 2.14rem;
+	background-image: url(../../src/assets/image/bg_order_upload_img@2x.png); 
+	background-size: 4.18rem 2.14rem;
+}
+.distribution .avatarWrapper .uploadify-button{ 
+	position: relative;top: 0; left: 0; width: 100%;height: 100%;
+	display: inline-block;opacity: 0;
+}
+.distribution .avatarWrapper .uploadify-queue{ display: none; }
+/*.distribution .logisticsInfo li:last-of-type input{
 	position: absolute;top: -3.02rem;left: 1.2rem;width: 4.18rem;height: 5.44rem;
 	z-index: 1;font-size: 0;
 }
 .distribution .logisticsInfo li:last-of-type p:last-of-type{
 	width: 4.18rem;height: 2.14rem;margin-top: 0.34rem;margin-left: 0.5rem;
 }
-.distribution .logisticsInfo li:last-of-type p:last-of-type img{ width: 4.18rem;height: 2.14rem; }
+.distribution .logisticsInfo li:last-of-type p:last-of-type img{ width: 4.18rem;height: 2.14rem; }*/
 .distribution .confirmBtn{
 	width: 6.64rem;
 	height: 1rem;
