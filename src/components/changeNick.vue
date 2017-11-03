@@ -51,7 +51,7 @@
 		},
 		methods: {
 			save: function(){
-				if (!$(".nickName input").val()) {
+				if (!$(".nickName input").val().trim()) {
 					alert("请输入昵称");
 					return;
 				}

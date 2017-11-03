@@ -51,7 +51,7 @@
 			</li>
 		</ul>
 		<p class="submit actived" v-if="isActive" @click="submitData">提交</p>
-		<p class="submit" v-else="isActive">提交</p>
+		<p class="submit" v-else>提交</p>
 		<!-- 提交成功弹窗 -->
 		<div v-show="successSubmit">
 			<div class="successLayer">
