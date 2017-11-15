@@ -91,6 +91,12 @@
 					} ,2000)
 				}
 			})
+
+			window.onhashchange = function(event){
+
+			    console.log(event.oldURL, event.newURL);
+
+			}
 		},
 		methods: {
 			toVipiao: function(){

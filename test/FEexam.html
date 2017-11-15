@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>FE理论知识点</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		*{ margin: 0; padding: 0; }
+		body{ padding: 50px 30px; }
+		.backgroundImg{ width: 500px; height: 250px; background: url(../src/assets/logo.png) center no-repeat, url(../src/assets/image/bg_order_upload_img@2x.png) left top repeat; background-size: 30%; font-size: 20px;text-align: center;line-height: 250px; }
+		.transitionTest{ width: 100px; height: 100px; background: pink; transition: width 2s, height 2s, background 2s; }
+		.transitionTest:hover{ width: 300px;height: 300px;background: red; }
+	</style>
+</head>
+<body>
+	<h3>深拷贝、浅拷贝</h3>
+	<p>
+		对于基本数据类型，浅复制是对值的复制，对数组、对象引用数据类型来说，浅复制是对对象地址的复制，并没有开辟新的栈，也就是复制的结果是两个对象指向同一个地址，修改其中一个对象的属性，则另一个对象的属性也会改变，而深复制则是开辟新的栈，两个对象对应两个不同的地址，修改一个对象的属性，不会改变另一个对象的属性。
+	</p>
+	<div class="backgroundImg">
+		hello world
+	</div>
+	<div class="transitionTest"></div>
+</body>
+</html>
